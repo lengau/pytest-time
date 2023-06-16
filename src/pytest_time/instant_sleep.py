@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from typing import cast
 
+import pytest
+
 from pytest_time import fake_time
 
 
@@ -30,3 +32,11 @@ class InstantSleep(fake_time.FakeTime):
     def monotonic_ns(self) -> int:
         """Get time.monotonic_ns."""
         return cast(int, self._time.monotonic_ns() + self.offset_ns)
+
+
+@pytest.fixture()
+def instant_sleep(monkeypatch: pytest.MonkeyPatch) -> InstantSleep:
+    """Fixture for speeding through time.sleep."""
+    sleep = InstantSleep()
+    sleep.install(monkeypatch)
+    return sleep
