@@ -5,12 +5,12 @@ import pytest
 import pytest_check
 from hypothesis import given, strategies
 
-from pytest_time import instant_sleep, real_time
+from pytest_time import InstantSleep, real_time
 
 
 @pytest.fixture()
 def faker(monkeypatch):
-    fake = instant_sleep.InstantSleep()
+    fake = InstantSleep()
     fake.install(monkeypatch)
     return fake
 
@@ -21,7 +21,7 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time):
 
     We're keeping the min value to 1 ms so CI should run it.
     """
-    faker = instant_sleep.InstantSleep()
+    faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
 
@@ -46,7 +46,7 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time):
 
     We're keeping the min value to 1 ms so CI should run it.
     """
-    faker = instant_sleep.InstantSleep()
+    faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
 
