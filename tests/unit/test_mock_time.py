@@ -5,13 +5,13 @@ from unittest import mock
 import pytest
 import pytest_check
 
-from pytest_time import fake_time, mock_time, real_time
+from pytest_time import fake_time, real_time, wrap_time
 
 
 @pytest.fixture()
 def mock_wrapper():
     mock_faker = mock.Mock(spec=fake_time.FakeTime)
-    return mock_time.MockWrapper(mock_faker)
+    return wrap_time.MockWrapper(mock_faker)
 
 
 def test_install(monkeypatch, mock_wrapper):

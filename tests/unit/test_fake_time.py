@@ -29,9 +29,9 @@ def check_monkeypatch(fn: str, fft: fake_time.FakeTime):
 
 
 class FakeFakeTime(fake_time.FakeTime):
-    """A fake class for testing FakeTime"""
+    """A fake class for testing FakeTime."""
 
-    def __init__(self, now: int = 0):
+    def __init__(self, now: int = 0) -> None:
         super().__init__()
         self.now = now
 

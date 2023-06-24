@@ -1,0 +1,1 @@
+"""Tests or pytest-time."""

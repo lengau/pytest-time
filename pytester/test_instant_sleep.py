@@ -38,3 +38,15 @@ def test_snooze_with_mock_sleep(ms: int, mock_sleep: mock.Mock) -> None:
     snooze(ms)
 
     mock_sleep.assert_called_once_with(ms * 0.001)
+
+
+@pytest.mark.parametrize("sleep_time", [1, 10, 100])
+@pytest.mark.usefixtures("instant_sleep")
+def test_instant_sleep(sleep_time) -> None:
+    start_time = time.time()
+    start_monotonic = time.monotonic()
+
+    time.sleep(sleep_time)
+
+    assert time.time() >= start_time + sleep_time
+    assert time.monotonic() >= start_monotonic + sleep_time
