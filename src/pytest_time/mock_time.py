@@ -1,17 +1,19 @@
 """A pytest fixture for mocking time calls to record them."""
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 from unittest import mock
 
-import pytest
+if TYPE_CHECKING:
+    import pytest
 
-from pytest_time import fake_time
+    from pytest_time import fake_time
 
 
-class MockWrapper():
+class MockWrapper:
     """Wraps a time faker with mocks."""
 
-    def __init__(self, faker: fake_time.FakeTime):
+    def __init__(self, faker: fake_time.FakeTime) -> None:
         super().__init__()
         self.sleep = mock.Mock(wraps=faker.sleep)
         self.time = mock.Mock(wraps=faker.time)
