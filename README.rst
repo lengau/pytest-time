@@ -17,7 +17,6 @@ The ``instant_sleep`` fixture is the most basic wrapper and is designed to be us
 A basic use of ``instant_sleep`` is shown below:
 
 .. code:: python
-    :number-lines:
 
     import time
     import pytest
@@ -81,7 +80,6 @@ Recording Time Calls
 Pytest-time also provides ``mock_time``, a fixture that wraps several ``time`` functions in Mock objects but still runs the real calls. This is useful if you need to ensure that certain calls occurred, etc. The fixture will provide Mock objects for inspection in tests:
 
 .. code:: python
-    :number-lines:
 
     import time
 
@@ -101,10 +99,9 @@ Pytest-time also provides ``mock_time``, a fixture that wraps several ``time`` f
 Mocking a Powernap
 ~~~~~~~~~~~~~~~~~~
 
-The two above are combined for you in the ``mock_instant_sleep`` fixture. This fixture replaces the relevant ``time`` functions as in the ```instant_sleep`` fixture, but also provides mock wrappers around those functions, allowing for recording time.
+The two above are combined for you in the ``mock_instant_sleep`` fixture. This fixture replaces the relevant ``time`` functions as in the ``instant_sleep`` fixture, but also provides mock wrappers around those functions, allowing for recording time.
 
 .. code:: python
-    :number-lines:
 
     import time
 
