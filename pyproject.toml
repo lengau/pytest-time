@@ -26,7 +26,7 @@ pytest_time = "pytest_time"
 
 [project.optional-dependencies]
 dev = [
-    "coverage[toml]==7.2.7",
+    "coverage[toml]==7.3.0",
     "hypothesis>=6.78",
     "pytest==7.4.0",
     "pytest-check",
@@ -42,7 +42,7 @@ lint = [
 ]
 types = [
     "mypy[reports]>=1.3.0,<2",
-    "pyright==1.1.317",
+    "pyright==1.1.324",
 ]
 
 [build-system]
