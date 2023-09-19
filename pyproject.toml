@@ -37,7 +37,7 @@ lint = [
     "black>=23.3.0,<24",
     "codespell[toml]>=2.2.4,<3",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
-    "ruff==0.0.278",
+    "ruff==0.0.290",
     "yamllint>=1.32.0,<2"
 ]
 types = [
