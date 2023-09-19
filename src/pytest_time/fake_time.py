@@ -21,7 +21,7 @@ class FakeTime(metaclass=abc.ABCMeta):
     def __init__(self) -> None:
         self._time = types.SimpleNamespace()
 
-    def sleep(self, secs: float | int) -> None:  # noqa: ARG002
+    def sleep(self, secs: float) -> None:  # noqa: ARG002
         # Ignore the unused `secs` argument.
         """Sleep like time.sleep, but without really sleeping."""
         return

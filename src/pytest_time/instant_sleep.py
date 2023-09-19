@@ -19,7 +19,7 @@ class InstantSleep(fake_time.FakeTime):
         super().__init__()
         self.offset_ns = 0
 
-    def sleep(self, secs: int | float) -> None:
+    def sleep(self, secs: float) -> None:
         """Fake sleeping by adjusting a time offset."""
         if secs < 0:
             return

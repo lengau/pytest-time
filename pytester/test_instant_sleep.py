@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-def snooze(ms: int | float) -> None:
+def snooze(ms: float) -> None:
     """Sleep for a certain number of milliseconds."""
     time.sleep(ms / 1000)
 
