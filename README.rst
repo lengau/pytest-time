@@ -117,6 +117,6 @@ The two above are combined for you in the ``mock_instant_sleep`` fixture. This f
         assert time.time() >= start_time + 86400
         assert time.monotonic() >= start_monotonic + 86400
 
-        mock_instant_sleep.sleep.assert_called_once_with(1)
+        mock_instant_sleep.sleep.assert_called_once_with(86400)
         assert len(mock_instant_sleep.time.mock_calls) == 2
         assert len(mock_instant_sleep.monotonic.mock_calls) == 2
