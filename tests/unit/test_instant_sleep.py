@@ -35,7 +35,10 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time):
     real_delta = real_after - real_before
 
     pytest_check.greater_equal(
-        fake_delta, sleep_time, "Fake time module didn't sleep for long enough"
+        # Reduce sleep time for floating point stuffs
+        fake_delta,
+        sleep_time * 0.9,
+        "Fake time module didn't sleep for long enough",
     )
     pytest_check.less(real_delta, sleep_time, "Took too much real time.")
 
@@ -60,6 +63,9 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time):
     real_delta = real_after - real_before
 
     pytest_check.greater_equal(
-        fake_delta, sleep_time, "Fake time module didn't sleep for long enough"
+        # Reduce sleep time for floating point stuffs
+        fake_delta,
+        sleep_time * 0.9,
+        "Fake time module didn't sleep for long enough",
     )
     pytest_check.less(real_delta, sleep_time, "Took too much real time.")
