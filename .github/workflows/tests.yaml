@@ -52,11 +52,11 @@ jobs:
       - name: Begin async install
         run: |
           sudo snap install --no-wait --classic --beta astral-uv
-        if: matrix.platform == "ubuntu-latest"
+        if: ${{ matrix.platform == "ubuntu-latest" }}
       - name: Install uv
         run: |
           pipx install uv
-        if: matrix.platform != "ubuntu-latest"
+        if: ${{ matrix.platform != "ubuntu-latest" }}
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -68,7 +68,7 @@ jobs:
         run: |
           snap watch --last=install
           sudo snap alias astral-uv.uv uv
-        if: matrix.platform == "ubuntu-latest"
+        if: ${{ matrix.platform == "ubuntu-latest" }}
       - name: Test
         run: |
           make test-oldest
