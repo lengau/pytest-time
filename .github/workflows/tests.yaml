@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          cache: 'pip'
       - name: Configure environment
         run: |
           echo "::group::Wait for snap to complete"
@@ -60,7 +59,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
-          cache: 'pip'
       - name: Complete install
         run: |
           snap watch --last=install
