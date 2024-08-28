@@ -12,6 +12,12 @@ jobs:
   linters:
     runs-on: ubuntu-latest
     steps:
+      - name: Cache Snaps
+        id: cache-snaps
+        uses: actions/cache@v4
+        with:
+          path: /var/lib/snapd/snaps
+          key: ${{ runner.os }}-snaps
       - name: Begin async installations
         run: |
           sudo snap install --no-wait --classic pyright
@@ -45,6 +51,13 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
+      - name: Cache Snaps
+        id: cache-snaps
+        uses: actions/cache@v4
+        with:
+          path: /var/lib/snapd/snaps
+          key: ${{ runner.os }}-snaps
+        if: ${{ matrix.platform == 'ubuntu-latest' }}
       - name: Begin async install
         run: |
           sudo snap install --no-wait --classic --beta astral-uv
