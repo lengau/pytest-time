@@ -34,7 +34,7 @@ class InstantSleep(fake_time.FakeTime):
         return cast(int, self._time.monotonic_ns() + self.offset_ns)
 
 
-@pytest.fixture()
+@pytest.fixture
 def instant_sleep(monkeypatch: pytest.MonkeyPatch) -> InstantSleep:
     """Fixture for speeding through time.sleep."""
     sleep = InstantSleep()

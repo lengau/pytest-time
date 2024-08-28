@@ -8,7 +8,7 @@ from hypothesis import given, strategies
 from pytest_time import InstantSleep, real_time
 
 
-@pytest.fixture()
+@pytest.fixture
 def faker(monkeypatch):
     fake = InstantSleep()
     fake.install(monkeypatch)

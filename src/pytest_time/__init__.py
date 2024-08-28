@@ -26,14 +26,14 @@ except ImportError:  # pragma: no cover
         __version__ = "dev"
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_time(monkeypatch: pytest.MonkeyPatch) -> MockWrapper:
     wrapper = MockWrapper(time)  # type: ignore[arg-type]
     wrapper.install(monkeypatch)
     return wrapper
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_instant_sleep(
     monkeypatch: pytest.MonkeyPatch, instant_sleep: InstantSleep
 ) -> MockWrapper:

@@ -16,7 +16,7 @@ def snooze(ms: float) -> None:
     time.sleep(ms / 1000)
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_sleep(monkeypatch: pytest.MonkeyPatch) -> Callable[[float], None]:
     """Get a mock object that wraps time.sleep."""
     sleep = mock.Mock(wraps=time.sleep)
