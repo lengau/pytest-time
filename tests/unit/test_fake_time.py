@@ -1,4 +1,5 @@
 """Tests for the fake_time module."""
+
 import time
 
 import pytest

@@ -6,14 +6,17 @@ help: ## Show this help.
 
 .PHONY: autoformat
 autoformat:
-	uv run black .
-	ruff check --fix --respect-gitignore .
+	ruff format .
+	ruff check --fix .
 	uv run codespell --toml pyproject.toml --write-changes .
 
+.PHONY: lint-ruff
+lint-ruff:
+	ruff format --check --diff .
+	ruff check .
+
 .PHONY: lint
-lint: lint-types
-	uv run black --check --diff .
-	ruff check --respect-gitignore .
+lint: lint-ruff lint-types
 	uv run codespell --toml pyproject.toml
 	uv run yamllint .
 	uv run rstcheck -r .

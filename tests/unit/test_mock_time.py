@@ -1,4 +1,5 @@
 """Tests for the MockWrapper."""
+
 import time
 from unittest import mock
 
