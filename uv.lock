@@ -875,23 +875,16 @@ wheels = [
 
 [[package]]
 name = "pytest-time"
-version = "0.3.2.dev20+gce2855d.d20240828"
+version = "0.3.2.dev22+g1d7284e"
 source = { editable = "." }
 dependencies = [
     { name = "pytest" },
 ]
 
-[package.optional-dependencies]
-lint = [
-    { name = "black" },
-    { name = "codespell", extra = ["toml"] },
-    { name = "rstcheck", extra = ["sphinx", "toml"] },
-    { name = "ruff" },
-    { name = "yamllint" },
-]
-
 [package.dev-dependencies]
 dev = [
+    { name = "black" },
+    { name = "codespell", extra = ["toml"] },
     { name = "coverage" },
     { name = "hypothesis" },
     { name = "mypy", extra = ["reports"] },
@@ -900,26 +893,24 @@ dev = [
     { name = "pytest-check" },
     { name = "pytest-cov" },
     { name = "pytest-mock" },
+    { name = "rstcheck", extra = ["sphinx", "toml"] },
+    { name = "ruff" },
     { name = "types-colorama" },
     { name = "types-docutils" },
     { name = "types-pillow" },
     { name = "types-pygments" },
     { name = "types-pytz" },
     { name = "types-setuptools" },
+    { name = "yamllint" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "black", marker = "extra == 'lint'", specifier = "<24,>=23.3.0" },
-    { name = "codespell", extras = ["toml"], marker = "extra == 'lint'", specifier = "<3,>=2.2.4" },
-    { name = "pytest" },
-    { name = "rstcheck", extras = ["sphinx", "toml"], marker = "extra == 'lint'", specifier = "<7,>=6.0.0" },
-    { name = "ruff", marker = "extra == 'lint'", specifier = "==0.0.290" },
-    { name = "yamllint", marker = "extra == 'lint'", specifier = "<2,>=1.32.0" },
-]
+requires-dist = [{ name = "pytest" }]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "black", specifier = ">=23.3.0,<24" },
+    { name = "codespell", extras = ["toml"], specifier = ">=2.2.4,<3" },
     { name = "coverage", specifier = ">=7.3.1" },
     { name = "hypothesis", specifier = ">=6.78" },
     { name = "mypy", extras = ["reports"], specifier = ">=1.3.0,<2" },
@@ -928,12 +919,15 @@ dev = [
     { name = "pytest-check", specifier = ">=2.0" },
     { name = "pytest-cov", specifier = ">=4.1.0" },
     { name = "pytest-mock", specifier = ">=3.11.1" },
+    { name = "rstcheck", extras = ["sphinx", "toml"], specifier = ">=6.0.0,<7" },
+    { name = "ruff", specifier = "==0.0.290" },
     { name = "types-colorama", specifier = ">=0.4.15.20240311" },
     { name = "types-docutils", specifier = ">=0.21.0.20240724" },
     { name = "types-pillow", specifier = ">=10.2.0.20240822" },
     { name = "types-pygments", specifier = ">=2.18.0.20240506" },
     { name = "types-pytz", specifier = ">=2024.1.0.20240417" },
     { name = "types-setuptools", specifier = ">=73.0.0.20240822" },
+    { name = "yamllint", specifier = ">=1.32.0,<2" },
 ]
 
 [[package]]
