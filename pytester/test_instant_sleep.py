@@ -1,4 +1,5 @@
 """Pytester test for InstantSleep."""
+
 from __future__ import annotations
 
 import time

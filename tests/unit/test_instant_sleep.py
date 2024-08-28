@@ -1,4 +1,5 @@
 """Tests for the instant sleep time faker."""
+
 import time
 
 import pytest

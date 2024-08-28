@@ -41,7 +41,6 @@ dev-dependencies = [
     "types-setuptools>=73.0.0.20240822",
     "mypy[reports]>=1.3.0,<2",
     "pyright==1.1.378",
-    "black>=23.3.0,<24",
     "codespell[toml]>=2.2.4,<3",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
     "yamllint>=1.32.0,<2"
@@ -128,64 +127,65 @@ extend-exclude = [
     "docs",
     "__pycache__",
 ]
-# Follow ST063 - Maintaining and updating linting specifications for updating these.
-select = [  # Base linting rule selections.
-    # See the internal document for discussion:
-    # https://docs.google.com/document/d/1i1n8pDmFmWi4wTDpk-JfnWCVUThPJiggyPi2DYwBBu4/edit
-    # All sections here are stable in ruff and shouldn't randomly introduce
-    # failures with ruff updates.
+
+[tool.ruff.lint]
+extend-select = [
     "F",  # The rules built into Flake8
     "E", "W",  # pycodestyle errors and warnings
+    "C90", # mccabe
     "I",  # isort checking
     "N",  # PEP8 naming
     "D",  # Implement pydocstyle checking as well.
     "UP",  # Pyupgrade - note that some of are excluded below due to Python versions
     "YTT",  # flake8-2020: Misuse of `sys.version` and `sys.version_info`
     "ANN",  # Type annotations.
+    "ASYNC", # Asynchronous stuff
+    "S", # flake8-bandit
     "BLE",  # Do not catch blind exceptions
     "FBT",  # Disallow boolean positional arguments (make them keyword-only)
-    "B0",  # Common mistakes and typos.
+    "B",  # Bugbears
     "A",  # Shadowing built-ins.
     "C4", # Encourage comprehensions, which tend to be faster than alternatives.
+    "COM",  # Commas
+    "DTZ",  # Datetime
     "T10",  # Don't call the debugger in production code
+    "EM",   # Error messages
+    "FA",   # Future Annotations
     "ISC",  # Implicit string concatenation that can cause subtle issues
     "ICN",  # Only use common conventions for import aliases.
+    "LOG",  # Logging
+    "G",    # Logging format
     "INP",  # Implicit namespace packages
+    "PIE",  # Mmm pie
+    "T20",  # No printing
     "PYI",  # Linting for type stubs.
     "PT",  # Pytest
     "Q",  # Consistent quotations
     "RSE",  # Errors on pytest raises.
     "RET",  # Simpler logic after return, raise, continue or break
+    "SLF",  # Private member access
+    "SLOT", # __slots__
     "SIM",  # Code simplification
+    "TID",  # Tidy imports
     "TCH",  # Guard imports only used for type checking behind a type-checkning block.
+    "INT",  # gettext
     "ARG",  # Unused arguments
     "PTH",  # Migrate to pathlib
+    "TD",   # TODOs
+    "FIX",  # FIXMEs
     "ERA",  # Don't check in commented out code
     "PGH",  # Pygrep hooks
     "PL",  # Pylint
     "TRY",  # Cleaner try/except,
-]
-extend-select = [
-    # flake8-bandit: security testing. https://github.com/charliermarsh/ruff#flake8-bandit-s
-    # https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
-    "S101", "S102",  # assert or exec
-    "S103", "S108",  # File permissions and tempfiles - use #noqa to silence when appropriate.
-    "S104",  # Network binds
-    "S105", "S106", "S107",  # Hardcoded passwords
-    "S110",  # try-except-pass (use contextlib.suppress instead)
-    "S113",  # Requests calls without timeouts
-    "S3",  # Serialising, deserialising, hashing, crypto, etc.
-    "S506",  # Unsafe YAML load
-    "S508", "S509",  # Insecure SNMP
-    "S701",  # jinja2 templates without autoescape
+    "DOC",  # Pydoclint
     "RUF001", "RUF002", "RUF003",  # Ambiguous unicode characters
     "RUF005",  # Encourages unpacking rather than concatenation
     "RUF008",  # Do not use mutable default values for dataclass attributes
     "RUF100",  # #noqa directive that doesn't flag anything
 ]
 ignore = [
+    "COM812", "ISC001",  # Conflicts with the formatter.
     "ANN10",  # Type annotations for `self` and `cls`
-    "E501",  # Line too long (reason: black will automatically fix this for us)
     "D105",  # Missing docstring in magic method (reason: magic methods already have definitions)
     "D107",  # Missing docstring in __init__ (reason: documented in class docstring)
     "D203",  # 1 blank line required before class docstring (reason: pep257 default)
@@ -194,7 +194,7 @@ ignore = [
     "A003",  # Class attribute shadowing built-in (reason: Class attributes don't often get bare references)
 ]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "test_*.py" = [  # Some things we want for the moin project are unnecessary in tests.
     "D",  # Ignore docstring rules in tests
     "ANN", # Ignore type annotations in tests
@@ -203,6 +203,7 @@ ignore = [
     "S108", # Allow Probable insecure usage of temporary file or directory
     "PLR0913",  # Allow many arguments for test functions
     "PLR2004",  # Allow magic values in tests
+    "SLF001",  # Allow accessing private members from tests
 ]
 # isort leaves init files alone by default, this makes ruff ignore them too.
 "__init__.py" = ["I001"]
