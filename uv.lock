@@ -875,7 +875,7 @@ wheels = [
 
 [[package]]
 name = "pytest-time"
-version = "0.3.2.dev15+gf35d31b.d20240828"
+version = "0.3.2.dev20+gce2855d.d20240828"
 source = { editable = "." }
 dependencies = [
     { name = "pytest" },
@@ -889,15 +889,13 @@ lint = [
     { name = "ruff" },
     { name = "yamllint" },
 ]
-types = [
-    { name = "mypy", extra = ["reports"] },
-    { name = "pyright" },
-]
 
 [package.dev-dependencies]
 dev = [
     { name = "coverage" },
     { name = "hypothesis" },
+    { name = "mypy", extra = ["reports"] },
+    { name = "pyright" },
     { name = "pytest" },
     { name = "pytest-check" },
     { name = "pytest-cov" },
@@ -914,8 +912,6 @@ dev = [
 requires-dist = [
     { name = "black", marker = "extra == 'lint'", specifier = "<24,>=23.3.0" },
     { name = "codespell", extras = ["toml"], marker = "extra == 'lint'", specifier = "<3,>=2.2.4" },
-    { name = "mypy", extras = ["reports"], marker = "extra == 'types'", specifier = "<2,>=1.3.0" },
-    { name = "pyright", marker = "extra == 'types'", specifier = "==1.1.327" },
     { name = "pytest" },
     { name = "rstcheck", extras = ["sphinx", "toml"], marker = "extra == 'lint'", specifier = "<7,>=6.0.0" },
     { name = "ruff", marker = "extra == 'lint'", specifier = "==0.0.290" },
@@ -926,6 +922,8 @@ requires-dist = [
 dev = [
     { name = "coverage", specifier = ">=7.3.1" },
     { name = "hypothesis", specifier = ">=6.78" },
+    { name = "mypy", extras = ["reports"], specifier = ">=1.3.0,<2" },
+    { name = "pyright", specifier = "==1.1.327" },
     { name = "pytest", specifier = ">=8.0.0" },
     { name = "pytest-check", specifier = ">=2.0" },
     { name = "pytest-cov", specifier = ">=4.1.0" },
