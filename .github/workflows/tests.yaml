@@ -16,7 +16,7 @@ jobs:
         run: |
           sudo snap install --no-wait --classic pyright
           sudo snap install --no-wait shellcheck
-          sudo snap install --no-wait --classic astral-uv
+          sudo snap install --no-wait --classic --beta astral-uv
           sudo snap install --no-wait ruff
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
     steps:
       - name: Begin async install
         run: |
-          sudo snap install --no-wait astral-uv
+          sudo snap install --no-wait --classic --beta astral-uv
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
