@@ -20,7 +20,7 @@ lint: lint-types
 
 .PHONY: lint-types
 lint-types:
-	pyright
+	uv run pyright
 	uv run mypy
 
 
