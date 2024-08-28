@@ -34,6 +34,9 @@ jobs:
           snap watch --last=install
           echo "::endgroup::"
           sudo snap alias astral-uv.uv uv
+          echo "::group::Change permissions for snaps for caching"
+          sudo chmod a+r /var/lib/snapd/snaps/*.snap
+          echo "::endgroup::"
       - name: Run Linters
         run: |
           make lint
@@ -61,6 +64,9 @@ jobs:
       - name: Begin async install
         run: |
           sudo snap install --no-wait --classic --beta astral-uv
+          echo "::group::Change permissions for snaps for caching"
+          sudo chmod a+r /var/lib/snapd/snaps/*.snap
+          echo "::endgroup::"
         if: ${{ matrix.platform == 'ubuntu-latest' }}
       - name: Install uv
         run: |
