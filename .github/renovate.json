@@ -12,12 +12,7 @@
       "groupName": "python packages",
       "matchManagers": ["pep621"],
       "automerge": true,
-      "schedule": ["on monday"],
-      "postUpgradeTasks": {
-        "commands": ["pip install -r requirements-dev.txt", "tox -e generate-requirements"],
-        "fileFilters": ["uv.lock", "pyproject.toml"],
-        "executionMode": "branch"
-      }
+      "schedule": ["on monday"]
     }
   ]
 }
