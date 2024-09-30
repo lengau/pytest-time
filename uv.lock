@@ -762,14 +762,15 @@ wheels = [
 
 [[package]]
 name = "pyright"
-version = "1.1.381"
+version = "1.1.382.post1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "nodeenv" },
+    { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/f4/8e2374423280cfb221a8eba3cb13d39276a05e592fea36bc06d5feb18c33/pyright-1.1.381.tar.gz", hash = "sha256:314cf0c1351c189524fb10c7ac20688ecd470e8cc505c394d642c9c80bf7c3a5", size = 17488 }
+sdist = { url = "https://files.pythonhosted.org/packages/1b/d3/fbf59f51cb74fc62a0c2b791aaa6242c8004db551b30c726783ba4432f05/pyright-1.1.382.post1.tar.gz", hash = "sha256:66a5d4e83be9452853d73e9dd9e95ba0ac3061845270e4e331d0070a597d3445", size = 21965 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2f/c0/fec7607edc2459816c49815cd5dac67b28c702ed497102118cdc2757cc8d/pyright-1.1.381-py3-none-any.whl", hash = "sha256:5dc0aa80a265675d36abab59c674ae01dbe476714f91845b61b841d34aa99081", size = 18221 },
+    { url = "https://files.pythonhosted.org/packages/ed/e2/7661f69927bf052e36d9c162c5087a02c346d0269be238cea2f5ae1e80f2/pyright-1.1.382.post1-py3-none-any.whl", hash = "sha256:21a4749dd1740e209f88d3a601e9f40748670d39481ea32b9d77edf7f3f1fb2e", size = 18669 },
 ]
 
 [[package]]
@@ -828,7 +829,7 @@ wheels = [
 
 [[package]]
 name = "pytest-time"
-version = "0.3.3.dev7+ga3a4933.d20240919"
+version = "0.3.3.dev8+g8e32ac4.d20240930"
 source = { editable = "." }
 dependencies = [
     { name = "pytest" },
@@ -864,7 +865,7 @@ dev = [
     { name = "coverage", specifier = ">=7.3.1" },
     { name = "hypothesis", specifier = ">=6.78" },
     { name = "mypy", extras = ["reports"], specifier = ">=1.3.0,<2" },
-    { name = "pyright", specifier = "==1.1.381" },
+    { name = "pyright", specifier = "==1.1.382.post1" },
     { name = "pytest", specifier = ">=8.0.0" },
     { name = "pytest-check", specifier = ">=2.0" },
     { name = "pytest-cov", specifier = ">=4.1.0" },
