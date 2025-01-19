@@ -12,8 +12,9 @@ from pytest_time import fake_time
 class InstantSleep(fake_time.FakeTime):
     """A time faker that makes sleep instant, adjusting time values accordingly.
 
-    This uses the real system clock, but adjusts the values from `time` after
-    each `sleep` call.
+    This uses the real system clock, but adjusts the values from ``time`` after each
+    ``sleep`` call.
+
     """
 
     def __init__(self) -> None:

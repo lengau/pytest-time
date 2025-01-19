@@ -14,6 +14,7 @@ help: ## Show this help.
 format:
 	ruff format .
 	ruff check --fix .
+	uv run --group lint docstrfmt .
 	uv run --group lint codespell --toml pyproject.toml --write-changes .
 
 .PHONY: lint-ruff
@@ -21,8 +22,12 @@ lint-ruff:
 	ruff format --check --diff .
 	ruff check .
 
+.PHONY: lint-docs
+lint-docs:
+	uv run --group lint docstrfmt --check .
+
 .PHONY: lint
-lint: lint-ruff lint-types
+lint: lint-ruff lint-types lint-docs
 	uv run --group lint codespell --toml pyproject.toml
 	uv run --group lint yamllint .
 	uv run --group lint rstcheck -r .
@@ -39,6 +44,14 @@ test:
 .PHONY: test-oldest
 test-oldest:
 	uv run --isolated --frozen --resolution=lowest --python-preference=only-system pytest
+
+.PHONY: docs
+docs:
+	make -C docs html
+
+.PHONY: docs-auto
+docs-auto: ## Auto-build docs
+	make -C docs auto
 
 .PHONY: install-test-deps
 install-test-deps:

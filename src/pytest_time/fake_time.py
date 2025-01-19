@@ -35,6 +35,7 @@ class FakeTime(metaclass=abc.ABCMeta):
         """Get the time like time.time.
 
         This default implementation uses this class's time_ns()
+
         """
         return _ns_to_sec(self.time_ns())
 
@@ -46,6 +47,7 @@ class FakeTime(metaclass=abc.ABCMeta):
         """Get the time like time.monotonic.
 
         This default implementation uses this class's monotonic_ns()
+
         """
         return _ns_to_sec(self.monotonic_ns())
 

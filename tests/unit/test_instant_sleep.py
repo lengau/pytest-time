@@ -21,6 +21,7 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time):
     """Test that we sleep for far less time than given.
 
     We're keeping the min value to 1 ms so CI should run it.
+
     """
     faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
@@ -49,6 +50,7 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time):
     """Test that we sleep for far less time than given.
 
     We're keeping the min value to 1 ms so CI should run it.
+
     """
     faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
