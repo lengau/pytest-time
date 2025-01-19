@@ -26,24 +26,28 @@ jobs:
           path: /var/lib/snapd/snaps
           key: ${{ runner.os }}-snaps
       - name: Begin async installations
+        id: install
         run: |
-          sudo snap install --no-wait --classic pyright
-          sudo snap install --no-wait shellcheck
-          sudo snap install --no-wait --classic astral-uv
-          sudo snap install --no-wait ruff
+          pyright_change=$(sudo snap install --no-wait --classic pyright)
+          shellcheck_change=$(snap install --no-wait shellcheck)
+          uv_change=$(sudo snap install --no-wait --classic astral-uv)
+          ruff_change=$(sudo snap install --no-wait ruff)
+          echo snap_changes="$pyright_change $shellcheck_change $uv_change $ruff_change" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Configure environment
         run: |
-          echo "::group::Wait for snap to complete"
-          snap watch --last=install
-          echo "::endgroup::"
-          sudo snap alias astral-uv.uv uv
           echo "::group::Change permissions for snaps for caching"
           sudo chmod a+r /var/lib/snapd/snaps/*.snap
           echo "::endgroup::"
+          echo "::group::Wait for snap to complete"
+            for change in ${{ steps.install.outputs.snap_changes }}; do
+              snap watch $change
+            done
+          echo "::endgroup::"
+
       - name: Run Linters
         run: |
           make lint
