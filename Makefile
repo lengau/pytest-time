@@ -29,8 +29,8 @@ lint: lint-ruff lint-types
 
 .PHONY: lint-types
 lint-types:
-	uv run pyright
-	uv run mypy
+	uv run --group lint pyright
+	uv run --group lint mypy
 
 .PHONY: test
 test:
