@@ -8,22 +8,25 @@ on:
       - "release/*"
   pull_request:
 
+env:
+  PYTHON_VERSIONS: 3.8 3.9 3.10 3.11 3.12 3.13
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   linters:
     runs-on: ubuntu-latest
     steps:
-      - name: Cache Snaps
-        id: cache-snaps
-        uses: actions/cache@v4
-        with:
-          path: /var/lib/snapd/snaps
-          key: ${{ runner.os }}-snaps
       - name: Begin async installations
+        id: install
         run: |
-          sudo snap install --no-wait --classic pyright
-          sudo snap install --no-wait shellcheck
-          sudo snap install --no-wait --classic --beta astral-uv
-          sudo snap install --no-wait ruff
+          pyright_change=$(sudo snap install --no-wait --classic pyright)
+          shellcheck_change=$(sudo snap install --no-wait shellcheck)
+          uv_change=$(sudo snap install --no-wait --classic astral-uv)
+          ruff_change=$(sudo snap install --no-wait ruff)
+          echo snap_changes="$pyright_change $shellcheck_change $uv_change $ruff_change" >> $GITHUB_OUTPUT
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -31,11 +34,9 @@ jobs:
       - name: Configure environment
         run: |
           echo "::group::Wait for snap to complete"
-          snap watch --last=install
-          echo "::endgroup::"
-          sudo snap alias astral-uv.uv uv
-          echo "::group::Change permissions for snaps for caching"
-          sudo chmod a+r /var/lib/snapd/snaps/*.snap
+            for change in ${{ steps.install.outputs.snap_changes }}; do
+              snap watch $change
+            done
           echo "::endgroup::"
       - name: Run Linters
         run: |
@@ -44,52 +45,37 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest, windows-latest]
-        python:
-          - "3.8"
-          - "3.9"
-          - "3.10"
-          - "3.11"
-          - "3.12"
-          - "3.13-dev"
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
-      - name: Cache Snaps
-        id: cache-snaps
-        uses: actions/cache@v4
-        with:
-          path: /var/lib/snapd/snaps
-          key: ${{ runner.os }}-snaps
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
-      - name: Begin async install
-        run: |
-          sudo snap install --no-wait --classic --beta astral-uv
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
-      - name: Install uv
-        run: |
-          pipx install uv
-        if: ${{ matrix.platform != 'ubuntu-latest' }}
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set up Python ${{ matrix.python }} on ${{ matrix.platform }}
-        uses: actions/setup-python@v5
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: ${{ matrix.python }}
-      - name: Complete install
+          version: "latest"
+      - name: Install test dependencies
         run: |
-          snap watch --last=install
-          echo "::group::Change permissions for snaps for caching"
-          sudo chmod a+r /var/lib/snapd/snaps/*.snap
-          echo "::endgroup::"
-          sudo snap alias astral-uv.uv uv
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
-      - name: Test
+          make install-test-deps
+      - name: Test across all Python versions
+        shell: bash
         run: |
-          make test-oldest
-          make test
+          for python_version in $PYTHON_VERSIONS; do
+            echo ::group::Python $python_version
+            make test UV_PYTHON=$python_version
+            echo ::endgroup::
+          done
         env:
           PYTEST_ADDOPTS: "--no-header -vv -rN"
+      - name: Test with the lowest supported libraries
+        shell: bash
+        run: |
+          for python_version in $PYTHON_VERSIONS; do
+            echo ::group::Python $python_version
+            make test UV_PYTHON=$python_version UV_RESOLUTION=lowest
+            echo ::endgroup::
+          done
       - name: Upload code coverage
         uses: codecov/codecov-action@v5
         with:
