@@ -56,7 +56,7 @@ build-backend = "setuptools.build_meta"
 lint = [
     "codespell[toml]>=2.2.4,<3",
     "mypy[reports]~=1.14.1",
-    "pyright==1.1.391",
+    "pyright==1.1.392.post0",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
 
     "types-pillow>=10.2.0.20240822",
