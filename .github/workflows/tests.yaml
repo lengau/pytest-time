@@ -39,15 +39,14 @@ jobs:
           fetch-depth: 0
       - name: Configure environment
         run: |
-          echo "::group::Change permissions for snaps for caching"
-          sudo chmod a+r /var/lib/snapd/snaps/*.snap
-          echo "::endgroup::"
           echo "::group::Wait for snap to complete"
             for change in ${{ steps.install.outputs.snap_changes }}; do
               snap watch $change
             done
           echo "::endgroup::"
-
+          echo "::group::Change permissions for snaps for caching"
+          sudo chmod a+r /var/lib/snapd/snaps/*.snap
+          echo "::endgroup::"
       - name: Run Linters
         run: |
           make lint
