@@ -54,13 +54,13 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Test across all Python versions
         run: |
           for python_version in $PYTHON_VERSIONS; do
