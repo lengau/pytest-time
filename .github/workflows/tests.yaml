@@ -19,12 +19,6 @@ jobs:
   linters:
     runs-on: ubuntu-latest
     steps:
-      - name: Cache Snaps
-        id: cache-snaps
-        uses: actions/cache@v4
-        with:
-          path: /var/lib/snapd/snaps
-          key: ${{ runner.os }}-snaps
       - name: Begin async installations
         id: install
         run: |
@@ -43,9 +37,6 @@ jobs:
             for change in ${{ steps.install.outputs.snap_changes }}; do
               snap watch $change
             done
-          echo "::endgroup::"
-          echo "::group::Change permissions for snaps for caching"
-          sudo chmod a+r /var/lib/snapd/snaps/*.snap
           echo "::endgroup::"
       - name: Run Linters
         run: |
