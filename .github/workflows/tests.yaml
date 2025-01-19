@@ -57,18 +57,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set up Python ${{ matrix.python }} on ${{ matrix.platform }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - name: Complete install
-        run: |
-          snap watch --last=install
-          echo "::group::Change permissions for snaps for caching"
-          sudo chmod a+r /var/lib/snapd/snaps/*.snap
-          echo "::endgroup::"
-          sudo snap alias astral-uv.uv uv
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
       - name: Test across all Python versions
         run: |
           for python_version in $PYTHON_VERSIONS; do
