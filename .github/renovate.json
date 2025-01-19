@@ -12,7 +12,7 @@
       "groupName": "python packages",
       "matchManagers": ["pep621"],
       "automerge": true,
-      "schedule": ["on monday"]
+      "schedule": ["at any time"]
     }
   ],
   "lockFileMaintenance": {
