@@ -22,7 +22,7 @@ jobs:
         run: |
           sudo snap install --no-wait --classic pyright
           sudo snap install --no-wait shellcheck
-          sudo snap install --no-wait --classic --beta astral-uv
+          sudo snap install --no-wait --classic astral-uv
           sudo snap install --no-wait ruff
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,25 +50,20 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
-          - "3.13-dev"
+          - "3.13"
+        resolution:
+          - "highest"
+          - "lowest"
+          - "lowest-direct"
+        prerelease: [disallow, allow]
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
-      - name: Cache Snaps
-        id: cache-snaps
-        uses: actions/cache@v4
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
         with:
-          path: /var/lib/snapd/snaps
-          key: ${{ runner.os }}-snaps
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
-      - name: Begin async install
-        run: |
-          sudo snap install --no-wait --classic --beta astral-uv
-        if: ${{ matrix.platform == 'ubuntu-latest' }}
-      - name: Install uv
-        run: |
-          pipx install uv
-        if: ${{ matrix.platform != 'ubuntu-latest' }}
+          version: "latest"
+          python-version: ${{ strategy.python }}
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -86,10 +81,12 @@ jobs:
         if: ${{ matrix.platform == 'ubuntu-latest' }}
       - name: Test
         run: |
-          make test-oldest
           make test
         env:
           PYTEST_ADDOPTS: "--no-header -vv -rN"
+          UV_PYTHON: ${{ matrix.python }}
+          UV_RESOLUTION: ${{ matrix.resolution }}
+          UV_PRERELEASE: ${{ matrix.prerelease }}
       - name: Upload code coverage
         uses: codecov/codecov-action@v5
         with:

@@ -4,8 +4,8 @@ help: ## Show this help.
 	@printf "%-30s %s\n" "------" "-----------"
 	@fgrep " ## " $(MAKEFILE_LIST) | fgrep -v grep | awk -F ': .*## ' '{$$1 = sprintf("%-30s", $$1)} 1'
 
-.PHONY: autoformat
-autoformat:
+.PHONY: format
+format:
 	ruff format .
 	ruff check --fix .
 	uv run codespell --toml pyproject.toml --write-changes .
@@ -25,7 +25,6 @@ lint: lint-ruff lint-types
 lint-types:
 	uv run pyright
 	uv run mypy
-
 
 .PHONY: test
 test:
