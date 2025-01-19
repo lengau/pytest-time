@@ -49,5 +49,6 @@ def test_instant_sleep(sleep_time) -> None:
 
     time.sleep(sleep_time)
 
-    assert time.time() >= start_time + sleep_time
-    assert time.monotonic() >= start_monotonic + sleep_time
+    # Subtract 1 microsecond from sleep time for floating point issues.
+    assert time.time() >= start_time + (sleep_time - 0.000_000_1)
+    assert time.monotonic() >= start_monotonic + (sleep_time - 0.000_000_1)

@@ -9,8 +9,9 @@ resolution-markers = [
 [manifest]
 constraints = [
     { name = "docutils", specifier = ">=0.15.0" },
-    { name = "lxml", specifier = ">=4.0.0" },
+    { name = "lxml", specifier = ">=5.0.0" },
     { name = "pygments", specifier = ">=2.0.0" },
+    { name = "pyyaml", specifier = ">=6" },
     { name = "sphinx", specifier = ">=7" },
 ]
 

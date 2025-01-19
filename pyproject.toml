@@ -43,7 +43,6 @@ dev-dependencies = [
     "pyright==1.1.391",
     "codespell[toml]>=2.2.4,<3",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
-    "yamllint>=1.32.0,<2"
 ]
 
 constraint-dependencies = [
