@@ -14,7 +14,7 @@ help: ## Show this help.
 format:
 	ruff format .
 	ruff check --fix .
-	uv run codespell --toml pyproject.toml --write-changes .
+	uv run --group lint codespell --toml pyproject.toml --write-changes .
 
 .PHONY: lint-ruff
 lint-ruff:
@@ -23,9 +23,9 @@ lint-ruff:
 
 .PHONY: lint
 lint: lint-ruff lint-types
-	uv run codespell --toml pyproject.toml
-	uv run yamllint .
-	uv run rstcheck -r .
+	uv run --group lint codespell --toml pyproject.toml
+	uv run --group lint yamllint .
+	uv run --group lint rstcheck -r .
 
 .PHONY: lint-types
 lint-types:
