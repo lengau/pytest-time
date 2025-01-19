@@ -52,6 +52,7 @@ constraint-dependencies = [
     "docutils>=0.15.0",
     "lxml>=4.0.0",
     "pygments>=2.0.0",
+    "pyyaml>=6",
     "sphinx>=7",
 ]
 

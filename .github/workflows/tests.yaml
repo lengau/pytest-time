@@ -29,7 +29,7 @@ jobs:
         id: install
         run: |
           pyright_change=$(sudo snap install --no-wait --classic pyright)
-          shellcheck_change=$(snap install --no-wait shellcheck)
+          shellcheck_change=$(sudo snap install --no-wait shellcheck)
           uv_change=$(sudo snap install --no-wait --classic astral-uv)
           ruff_change=$(sudo snap install --no-wait ruff)
           echo snap_changes="$pyright_change $shellcheck_change $uv_change $ruff_change" >> $GITHUB_OUTPUT
@@ -69,6 +69,7 @@ jobs:
         run: |
           make install-test-deps
       - name: Test across all Python versions
+        shell: bash
         run: |
           for python_version in $PYTHON_VERSIONS; do
             make test UV_PYTHON=$python_version
@@ -76,6 +77,7 @@ jobs:
         env:
           PYTEST_ADDOPTS: "--no-header -vv -rN"
       - name: Test with the lowest supported libraries
+        shell: bash
         run: |
           for python_version in $PYTHON_VERSIONS; do
             make test UV_PYTHON=$python_version UV_RESOLUTION=lowest
