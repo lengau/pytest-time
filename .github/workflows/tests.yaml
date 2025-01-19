@@ -65,6 +65,9 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
+      - name: Install test dependencies
+        run: |
+          make install-test-deps
       - name: Test across all Python versions
         run: |
           for python_version in $PYTHON_VERSIONS; do
