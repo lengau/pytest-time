@@ -9,6 +9,8 @@ on:
     tags:
       - "*"
   pull_request:
+permissions:
+  contents: write # Needed for creating GH releases
 jobs:
   build:
     runs-on: ubuntu-latest
