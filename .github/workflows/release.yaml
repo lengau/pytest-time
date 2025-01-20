@@ -6,6 +6,8 @@ on:
       - "feature/*"
       - "hotfix/*"
       - "release/*"
+    tags:
+      - "[0-9.]+"
   pull_request:
 jobs:
   build:
