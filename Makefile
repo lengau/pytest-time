@@ -11,11 +11,12 @@ help: ## Show this help.
 	@fgrep " ## " $(MAKEFILE_LIST) | fgrep -v grep | awk -F ': .*## ' '{$$1 = sprintf("%-30s", $$1)} 1'
 
 .PHONY: format
-format:
+format: install-yamlfmt
 	ruff format .
 	ruff check --fix .
 	uv run --group lint docstrfmt .
 	uv run --group lint codespell --toml pyproject.toml --write-changes .
+	yamlfmt .
 
 .PHONY: lint-ruff
 lint-ruff:
@@ -74,4 +75,13 @@ else ifneq ($(shell which go),)
 	go install github.com/rhysd/actionlint/cmd/actionlint@latest
 else
 	$(error Please install go to use actionlint)
+endif
+
+.PHONY: install-yamlfmt
+install-yamlfmt:
+ifneq ($(shell which yamlfmt),)
+else ifneq ($(shell which go),)
+	go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+else
+	$(error Please install go to use yamlfmt)
 endif
