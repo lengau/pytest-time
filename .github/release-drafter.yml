@@ -8,7 +8,6 @@ categories:
   - title: "Bug Fixes"
     labels:
       - "bug"
-
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   Special thanks to the contributors that made this release happen: $CONTRIBUTORS

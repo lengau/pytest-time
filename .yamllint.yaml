@@ -1,8 +1,5 @@
----
 ignore-from-file: [.gitignore]
-
 extends: default
-
 rules:
   document-start: disable
   float-values: enable
