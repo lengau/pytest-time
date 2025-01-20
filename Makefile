@@ -37,6 +37,10 @@ lint-types:
 	uv run --group lint pyright
 	uv run --group lint mypy
 
+.PHONY: lint-actions
+lint-actions: install-actionlint
+	actionlint
+
 .PHONY: test
 test:
 	uv run pytest
@@ -60,4 +64,14 @@ ifneq ($(shell which apt-get),)
 else
 	$(warning Unknown how to install dependencies on this system. Please install the equivalents of the following debian packages:)
 	$(info libxml2-dev libxslt1-dev clang)
+endif
+
+.PHONY: install-actionlint
+install-actionlint:
+ifneq ($(shell which actionlint),)
+	@# Actionlint already installed
+else ifneq ($(shell which go),)
+	go install github.com/rhysd/actionlint/cmd/actionlint@latest
+else
+	$(error Please install go to use actionlint)
 endif

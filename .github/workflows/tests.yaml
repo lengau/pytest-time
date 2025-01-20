@@ -22,11 +22,11 @@ jobs:
       - name: Begin async installations
         id: install
         run: |
-          pyright_change=$(sudo snap install --no-wait --classic pyright)
-          shellcheck_change=$(sudo snap install --no-wait shellcheck)
-          uv_change=$(sudo snap install --no-wait --classic astral-uv)
-          ruff_change=$(sudo snap install --no-wait ruff)
-          echo snap_changes="$pyright_change $shellcheck_change $uv_change $ruff_change" >> $GITHUB_OUTPUT
+          pyright_change="$(sudo snap install --no-wait --classic pyright)"
+          shellcheck_change="$(sudo snap install --no-wait shellcheck)"
+          uv_change="$(sudo snap install --no-wait --classic astral-uv)"
+          ruff_change="$(sudo snap install --no-wait ruff)"
+          echo snap_changes="$pyright_change $shellcheck_change $uv_change $ruff_change" >> "$GITHUB_OUTPUT"
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -61,6 +61,7 @@ jobs:
       - name: Test across all Python versions
         shell: bash
         run: |
+          # shellcheck disable=SC2086
           for python_version in $PYTHON_VERSIONS; do
             echo ::group::Python $python_version
             make test UV_PYTHON=$python_version
@@ -71,6 +72,7 @@ jobs:
       - name: Test with the lowest supported libraries
         shell: bash
         run: |
+          # shellcheck disable=SC2086
           for python_version in $PYTHON_VERSIONS; do
             echo ::group::Python $python_version
             make test UV_PYTHON=$python_version UV_RESOLUTION=lowest
