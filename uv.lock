@@ -304,11 +304,11 @@ wheels = [
 
 [[package]]
 name = "codespell"
-version = "2.3.0"
+version = "2.4.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a0/a9/98353dfc7afcdf18cffd2dd3e959a25eaaf2728cf450caa59af89648a8e4/codespell-2.3.0.tar.gz", hash = "sha256:360c7d10f75e65f67bad720af7007e1060a5d395670ec11a7ed1fed9dd17471f", size = 329791 }
+sdist = { url = "https://files.pythonhosted.org/packages/b0/2f/706691245790ae6c63252d48b7ff5e3635951d55b3ce3c0ac13d898bf70b/codespell-2.4.0.tar.gz", hash = "sha256:587d45b14707fb8ce51339ba4cce50ae0e98ce228ef61f3c5e160e34f681be58", size = 344743 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl", hash = "sha256:a9c7cef2501c9cfede2110fd6d4e5e62296920efe9abfb84648df866e47f58d1", size = 329167 },
+    { url = "https://files.pythonhosted.org/packages/19/ce/39bfb82aa428a3ac4d94cc8c9faa3eadeadb2606eee3b584f68d9b575b43/codespell-2.4.0-py3-none-any.whl", hash = "sha256:b4c5b779f747dd481587aeecb5773301183f52b94b96ed51a28126d0482eec1d", size = 344508 },
 ]
 
 [package.optional-dependencies]
@@ -576,7 +576,7 @@ wheels = [
 
 [[package]]
 name = "hypothesis"
-version = "6.124.1"
+version = "6.124.2"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.10'",
@@ -587,9 +587,9 @@ dependencies = [
     { name = "exceptiongroup", marker = "python_full_version >= '3.9' and python_full_version < '3.11'" },
     { name = "sortedcontainers", marker = "python_full_version >= '3.9'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/df/bf/f887421cc40ef306f1c85d0ad8e6dee965010652fad57e687221221f386d/hypothesis-6.124.1.tar.gz", hash = "sha256:6e21995c3cb3198ef7e60853acce1fbaa6c16de59c2fb3158845664dfe639bd9", size = 420693 }
+sdist = { url = "https://files.pythonhosted.org/packages/e6/3b/3a7cf8973b0424c6af0b2b5fe30f89ab738616bad2a16aafcc49ff069ed4/hypothesis-6.124.2.tar.gz", hash = "sha256:c98823fc1323f23399e5f2251982fd1f38259f84cf627aaaea1b3f0a0d4d2b03", size = 419462 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/34/599882a0dab7615cd6cbf326e11b7ac3dc2e5ee349ef3af551e70ea07237/hypothesis-6.124.1-py3-none-any.whl", hash = "sha256:40c8be982d3a79b26d5ae11b6606189784f1654f3c750ffcb99fc5b352d5e2ba", size = 483566 },
+    { url = "https://files.pythonhosted.org/packages/a3/e1/80f1819e65a9a0b1b744b453cd26803764fc192cff8eaea202e76f6f5a65/hypothesis-6.124.2-py3-none-any.whl", hash = "sha256:fef7709a404929a9cd3e785f60a6e026089aab986e288b1fdced13091574d474", size = 482180 },
 ]
 
 [[package]]
@@ -1386,7 +1386,7 @@ dev = [
     { name = "coverage", version = "7.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "coverage", version = "7.6.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
     { name = "hypothesis", version = "6.113.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "hypothesis", version = "6.124.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "hypothesis", version = "6.124.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
     { name = "pytest" },
     { name = "pytest-check" },
     { name = "pytest-cov", version = "5.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
