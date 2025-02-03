@@ -577,7 +577,7 @@ wheels = [
 
 [[package]]
 name = "hypothesis"
-version = "6.124.9"
+version = "6.125.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.10'",
@@ -588,9 +588,9 @@ dependencies = [
     { name = "exceptiongroup", marker = "python_full_version >= '3.9' and python_full_version < '3.11'" },
     { name = "sortedcontainers", marker = "python_full_version >= '3.9'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/05/0f/b27f51d9112c7235fc45a8640dab8971e80e0b8e43f5995e55ca3a8416c4/hypothesis-6.124.9.tar.gz", hash = "sha256:c6d210fc1b46a7cfc3139b2230ca1cc8f73dce4e8ee440d004ceb17142acf6f5", size = 416948 }
+sdist = { url = "https://files.pythonhosted.org/packages/b1/ac/72f2b8c7fe4d5b5173c8357aa6a023399062acecac4fb734a665cd10236a/hypothesis-6.125.0.tar.gz", hash = "sha256:4c55cf26abaadd9a5c89f183a3df860f8ddf28a14c43977b969eec8aab2be9eb", size = 416962 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a0/3e/6210894a10e269193ba29738d692b844411d3938b6c996db524a15461c12/hypothesis-6.124.9-py3-none-any.whl", hash = "sha256:d2def7117f87c72e6408aba233f93e44d1b909c2a47aa85d598435b8c3d649dd", size = 479534 },
+    { url = "https://files.pythonhosted.org/packages/a3/28/f4c9d4da0eafdf0e981086f1a99aa2ea81733164232bbf34bbf26b693770/hypothesis-6.125.0-py3-none-any.whl", hash = "sha256:84368c4125beb19c6e026d599a221f4b3dd42a8f420c78bb4ef2517c748b9d61", size = 479534 },
 ]
 
 [[package]]
@@ -1387,7 +1387,7 @@ dev = [
     { name = "coverage", version = "7.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "coverage", version = "7.6.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
     { name = "hypothesis", version = "6.113.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
-    { name = "hypothesis", version = "6.124.9", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "hypothesis", version = "6.125.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
     { name = "pytest" },
     { name = "pytest-check" },
     { name = "pytest-cov", version = "5.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
