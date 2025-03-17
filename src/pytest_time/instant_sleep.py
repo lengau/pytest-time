@@ -29,11 +29,11 @@ class InstantSleep(fake_time.FakeTime):
 
     def time_ns(self) -> int:
         """Get time.time_ns."""
-        return cast(int, self._time.time_ns() + self.offset_ns)
+        return cast("int", self._time.time_ns() + self.offset_ns)
 
     def monotonic_ns(self) -> int:
         """Get time.monotonic_ns."""
-        return cast(int, self._time.monotonic_ns() + self.offset_ns)
+        return cast("int", self._time.monotonic_ns() + self.offset_ns)
 
 
 @pytest.fixture
