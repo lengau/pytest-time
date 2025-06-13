@@ -6,6 +6,7 @@
     ":semanticCommits",
     ":semanticCommitScope(deps)"
   ],
+  "ignoreDeps": ["mypy"],
   "automergeType": "pr",
   "packageRules": [
     {
