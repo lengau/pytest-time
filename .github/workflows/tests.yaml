@@ -53,6 +53,9 @@ jobs:
           - pypy3.9
           - pypy3.10
           - pypy3.11
+        exclude:
+          - platform: windows-latest # pypy 3.8 appears broken on Windows
+            python: pypy3.8
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
