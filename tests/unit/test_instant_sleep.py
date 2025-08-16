@@ -3,8 +3,8 @@
 import time
 
 import pytest
-import pytest_check
 from hypothesis import given, strategies
+from pytest_check.context_manager import CheckContextManager
 
 from pytest_time import InstantSleep, real_time
 
@@ -17,7 +17,7 @@ def faker(monkeypatch):
 
 
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
-def test_instant_sleep_doesnt_sleep_time(sleep_time):
+def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
     """Test that we sleep for far less time than given.
 
     We're keeping the min value to 1 ms so CI should run it.
@@ -36,17 +36,19 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time):
     fake_delta = fake_after - fake_before
     real_delta = real_after - real_before
 
-    pytest_check.greater_equal(
+    check = CheckContextManager()
+
+    with check:
         # Reduce sleep time for floating point stuffs
-        fake_delta,
-        sleep_time * 0.9,
-        "Fake time module didn't sleep for long enough",
-    )
-    pytest_check.less(real_delta, sleep_time, "Took too much real time.")
+        assert fake_delta >= sleep_time * 0.9, (
+            "Fake time module didn't sleep for long enough"
+        )
+    with check:
+        assert real_delta < sleep_time, "Took too much real time."
 
 
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
-def test_instant_sleep_doesnt_sleep_monotonic(sleep_time):
+def test_instant_sleep_doesnt_sleep_monotonic(sleep_time: float):
     """Test that we sleep for far less time than given.
 
     We're keeping the min value to 1 ms so CI should run it.
@@ -65,10 +67,12 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time):
     fake_delta = fake_after - fake_before
     real_delta = real_after - real_before
 
-    pytest_check.greater_equal(
+    check = CheckContextManager()
+
+    with check:
         # Reduce sleep time for floating point stuffs
-        fake_delta,
-        sleep_time * 0.9,
-        "Fake time module didn't sleep for long enough",
-    )
-    pytest_check.less(real_delta, sleep_time, "Took too much real time.")
+        assert fake_delta >= sleep_time * 0.9, (
+            "Fake time module didn't sleep for long enough"
+        )
+    with check:
+        assert real_delta < sleep_time, "Took too much real time."

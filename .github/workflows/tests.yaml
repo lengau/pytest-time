@@ -7,8 +7,6 @@ on:
       - "hotfix/*"
       - "release/*"
   pull_request:
-env:
-  PYTHON_VERSIONS: 3.8 3.9 3.10 3.11 3.12 3.13 3.14
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -42,6 +40,19 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, windows-latest]
+        python:
+          - 3.8
+          - 3.9
+          - "3.10"
+          - 3.11
+          - 3.12
+          - 3.13
+          - 3.14
+          - 3.14+freethreaded
+          - pypy3.8
+          - pypy3.9
+          - pypy3.10
+          - pypy3.11
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
@@ -59,22 +70,14 @@ jobs:
         shell: bash
         run: |
           # shellcheck disable=SC2086
-          for python_version in $PYTHON_VERSIONS; do
-            echo ::group::Python $python_version
-            make test UV_PYTHON=$python_version
-            echo ::endgroup::
-          done
+          make test UV_PYTHON=${{ matrix.python }}
         env:
           PYTEST_ADDOPTS: "--no-header -vv -rN"
       - name: Test with the lowest supported libraries
         shell: bash
         run: |
           # shellcheck disable=SC2086
-          for python_version in $PYTHON_VERSIONS; do
-            echo ::group::Python $python_version
-            make test UV_PYTHON=$python_version UV_RESOLUTION=lowest
-            echo ::endgroup::
-          done
+          make test UV_PYTHON=${{ matrix.python }} UV_RESOLUTION=lowest
       - name: Upload code coverage
         uses: codecov/codecov-action@v5
         with:
