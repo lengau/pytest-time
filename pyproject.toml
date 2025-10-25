@@ -65,7 +65,7 @@ lint = [
     "docstrfmt>=1.9.0",
     "mypy[reports]~=1.16.0; python_version >= '3.10'",
     "mypy[reports]~=1.14.0; python_version < '3.10'",
-    "pyright==1.1.406",
+    "pyright==1.1.407",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
 
     "types-pillow>=10.2.0.20240822",
