@@ -38,7 +38,7 @@ lint-types:
 	uv run --group lint pyright
 	uv run --group lint mypy
 	# Check type compatibility with pre-3.10 python
-	VIRTUAL_ENV=.venv-3.9 uv run --group=lint --python=3.8 mypy
+	VIRTUAL_ENV=.venv-3.9 uv run --group=lint --python=3.9 mypy
 
 .PHONY: lint-actions
 lint-actions: install-actionlint

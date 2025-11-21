@@ -63,7 +63,7 @@ build-backend = "setuptools.build_meta"
 lint = [
     "codespell[toml]>=2.2.4,<3",
     "docstrfmt>=1.9.0",
-    "mypy[reports]~=1.16.0; python_version >= '3.10'",
+    "mypy[reports]~=1.18.0; python_version >= '3.10'",
     "mypy[reports]~=1.14.0; python_version < '3.10'",
     "pyright==1.1.407",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
@@ -135,7 +135,7 @@ disallow_untyped_decorators = true
 disallow_any_generics = true
 disallow_untyped_defs = true
 no_implicit_optional = true
-# exclude_gitignore = true
+exclude_gitignore = true  # Note: mypy will complain about this when running in Py 3.9.
 
 [[tool.mypy.overrides]]
 module = "tests.*"
