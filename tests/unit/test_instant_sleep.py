@@ -4,7 +4,9 @@ import time
 
 import pytest
 from hypothesis import given, strategies
-from pytest_check.context_manager import CheckContextManager
+from pytest_check.context_manager import (  # type: ignore[import-untyped]
+    CheckContextManager,
+)
 
 from pytest_time import InstantSleep, real_time
 

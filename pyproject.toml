@@ -124,18 +124,18 @@ pythonVersion = "3.8"
 pythonPlatform = "Linux"
 
 [tool.mypy]
-python_version = "3.8"
 packages = ["pytest_time", "tests"]
 warn_unused_configs = true
 warn_redundant_casts = true
 strict_equality = true
-strict_concatenate = true
+extra_checks = true
 warn_return_any = true
 disallow_subclassing_any = true
 disallow_untyped_decorators = true
 disallow_any_generics = true
 disallow_untyped_defs = true
 no_implicit_optional = true
+# exclude_gitignore = true
 
 [[tool.mypy.overrides]]
 module = "tests.*"
