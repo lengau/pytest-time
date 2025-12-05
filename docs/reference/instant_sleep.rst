@@ -1,5 +1,6 @@
-Instant sleep
-=============
+###############
+ Instant sleep
+###############
 
 The ``instant_sleep`` fixture is the most basic wrapper and is designed to be used at
 any scope. It monkeypatches the built-in ``time`` module to be chronologically

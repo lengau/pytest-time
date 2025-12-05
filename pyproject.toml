@@ -51,6 +51,12 @@ constraint-dependencies = [
     "pyyaml>=6",
     "sphinx>=7",
 ]
+conflicts = [
+    [
+        { group = "lint" },
+        { group = "lint-38" },
+    ]
+]
 
 [build-system]
 requires = [
@@ -63,7 +69,7 @@ build-backend = "setuptools.build_meta"
 lint = [
     "codespell[toml]>=2.2.4,<3",
     "docstrfmt>=1.9.0",
-    "mypy[reports]~=1.18.0; python_version >= '3.10'",
+    "mypy[reports]>=1.18.0; python_version >= '3.10'",
     "mypy[reports]~=1.14.0; python_version < '3.10'",
     "pyright==1.1.407",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
@@ -74,6 +80,11 @@ lint = [
     "types-docutils>=0.21.0.20240724",
     "types-pytz>=2024.1.0.20240417",
     "types-setuptools>=73.0.0.20240822",
+]
+lint-38 = [
+    "mypy[reports]<1.17; python_version>='3.10'",  # Dropped support for targeting 3.8
+    "pytest<9",  # Dropped Python 3.8 support
+    "pytest-check<2.5.0",  # Dropped Python 3.8 support
 ]
 docs = [
     "sphinx>=7.1.2",

@@ -1,5 +1,6 @@
-Recording Time Calls
-====================
+######################
+ Recording Time Calls
+######################
 
 Pytest-time also provides ``mock_time``, a fixture that wraps several ``time`` functions
 in Mock objects but still runs the real calls. This is useful if you need to ensure that
@@ -24,8 +25,9 @@ tests:
         assert len(mock_time.time.mock_calls) == 2
         assert len(mock_time.monotonic.mock_calls) == 2
 
-Mocking time with instant sleep
--------------------------------
+*********************************
+ Mocking time with instant sleep
+*********************************
 
 The ``mock_instant_sleep`` fixture combines :doc:`instant_sleep` with ``mock_time``.
 This fixture replaces the relevant ``time`` functions as in the ``instant_sleep``

@@ -4,8 +4,9 @@
     You can adapt this file completely to your liking, but it should at least
     contain the root `toctree` directive.
 
-``pytest-time``
-===============
+#################
+ ``pytest-time``
+#################
 
 .. toctree::
     :maxdepth: 2
@@ -16,8 +17,9 @@
 ``pytest-time`` is a pytest extension for controlling Python's built-in
 :external+python:doc:`time <library/time>` module.
 
-Indices and tables
-==================
+####################
+ Indices and tables
+####################
 
 - :ref:`genindex`
 - :ref:`modindex`
