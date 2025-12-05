@@ -82,8 +82,8 @@ lint = [
     "types-setuptools>=73.0.0.20240822",
 ]
 lint-38 = [
-    "mypy[reports]<1.17; python_version>='3.10'",  # Dropped support for targeting 3.8
-    "pytest<9",  # Dropped Python 3.8 support
+    "mypy[reports]>=1.14,<1.17; python_version>='3.10'",  # Dropped support for targeting 3.8
+    "pytest>=7,<9",  # Dropped Python 3.8 support
     "pytest-check<2.5.0",  # Dropped Python 3.8 support
 ]
 docs = [
