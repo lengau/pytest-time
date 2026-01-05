@@ -35,10 +35,10 @@ lint: lint-ruff lint-types lint-docs
 
 .PHONY: lint-types
 lint-types:
-	uv run --group lint pyright
-	uv run --group lint mypy
+	uv run --group=lint --group=type-hints pyright
+	uv run --group=lint --group=type-hints mypy
 	# Check type compatibility with pre-3.10 python
-	uv run --group=lint-38 mypy --python-version=3.8
+	uv run --group=lint-38 --group=type-hints --python=3.8 --isolated mypy --python-version=3.8
 
 .PHONY: lint-actions
 lint-actions: install-actionlint
