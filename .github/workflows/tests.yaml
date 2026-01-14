@@ -66,6 +66,9 @@ jobs:
         uses: astral-sh/setup-uv@v7
         with:
           version: "latest"
+      - name: Update repositories
+        if: runner.os == 'Linux'
+        run: sudo apt-get update
       - name: Install test dependencies
         run: |
           make install-test-deps
