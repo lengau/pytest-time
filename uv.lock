@@ -2698,7 +2698,8 @@ type-hints = [
     { name = "types-colorama", version = "0.4.15.20240311", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-colorama", version = "0.4.15.20250801", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-docutils", version = "0.21.0.20241128", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (python_full_version < '3.9' and extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20260223", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pillow" },
     { name = "types-pygments", version = "2.19.0.20250107", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pygments", version = "2.19.0.20251121", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
@@ -3855,24 +3856,30 @@ name = "types-docutils"
 version = "0.22.3.20251115"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.12' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.11.*' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.10.*' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.9.*' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
-    "python_full_version >= '3.14' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.13.*' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.12.*' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.11.*' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.10.*' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.9.*' and extra == 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version >= '3.12' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.11.*' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.10.*' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
-    "python_full_version == '3.9.*' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
+    "python_full_version == '3.9.*'",
+    "python_full_version >= '3.14'",
+    "python_full_version == '3.13.*'",
+    "python_full_version == '3.12.*'",
+    "python_full_version == '3.11.*'",
+    "python_full_version == '3.10.*'",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/eb/d7/576ec24bf61a280f571e1f22284793adc321610b9bcfba1bf468cf7b334f/types_docutils-0.22.3.20251115.tar.gz", hash = "sha256:0f79ea6a7bd4d12d56c9f824a0090ffae0ea4204203eb0006392906850913e16", size = 56828, upload-time = "2025-11-15T02:59:57.371Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9c/01/61ac9eb38f1f978b47443dc6fd2e0a3b0f647c2da741ddad30771f1b2b6f/types_docutils-0.22.3.20251115-py3-none-any.whl", hash = "sha256:c6e53715b65395d00a75a3a8a74e352c669bc63959e65a207dffaa22f4a2ad6e", size = 91951, upload-time = "2025-11-15T02:59:56.413Z" },
+]
+
+[[package]]
+name = "types-docutils"
+version = "0.22.3.20260223"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.12'",
+    "python_full_version == '3.11.*'",
+    "python_full_version == '3.10.*'",
+]
+sdist = { url = "https://files.pythonhosted.org/packages/80/33/92c0129283363e3b3ba270bf6a2b7d077d949d2f90afc4abaf6e73578563/types_docutils-0.22.3.20260223.tar.gz", hash = "sha256:e90e868da82df615ea2217cf36dff31f09660daa15fc0f956af53f89c1364501", size = 57230, upload-time = "2026-02-23T04:11:21.806Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ba/c7/a4ae6a75d5b07d63089d5c04d450a0de4a5d48ffcb84b95659b22d3885fe/types_docutils-0.22.3.20260223-py3-none-any.whl", hash = "sha256:cc2d6b7560a28e351903db0989091474aa619ad287843a018324baee9c4d9a8f", size = 91969, upload-time = "2026-02-23T04:11:20.966Z" },
 ]
 
 [[package]]
@@ -3921,7 +3928,8 @@ resolution-markers = [
     "python_full_version == '3.9.*' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
 ]
 dependencies = [
-    { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (python_full_version < '3.9' and extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20260223", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/90/3b/cd650700ce9e26b56bd1a6aa4af397bbbc1784e22a03971cb633cdb0b601/types_pygments-2.19.0.20251121.tar.gz", hash = "sha256:eef114fde2ef6265365522045eac0f8354978a566852f69e75c531f0553822b1", size = 18590, upload-time = "2025-11-21T03:03:46.623Z" }
 wheels = [
