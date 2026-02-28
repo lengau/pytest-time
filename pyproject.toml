@@ -86,7 +86,7 @@ type-hints = [
 lint-38 = [
     "mypy[reports]>=1.14,<1.17",  # Dropped support for targeting 3.8
     "pytest>=7,<9",  # Dropped Python 3.8 support
-    "pytest-check<2.7.1",  # Dropped Python 3.8 support
+    "pytest-check<2.7.3",  # Dropped Python 3.8 support
 ]
 docs = [
     "sphinx>=7.1.2",
