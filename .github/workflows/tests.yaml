@@ -62,6 +62,10 @@ jobs:
         exclude:
           - platform: windows-latest # pypy 3.8 appears broken on Windows
             python: pypy3.8
+          - platform: windows-latest  # Graalpy no like Windows
+            python: graalpy3.11
+          - platform: windows-latest  # Graalpy no like Windows
+            python: graalpy3.12          
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
