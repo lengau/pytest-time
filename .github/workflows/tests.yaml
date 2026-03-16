@@ -55,8 +55,6 @@ jobs:
           - pypy3.9
           - pypy3.10
           - pypy3.11
-          - graalpy3.8
-          - graalpy3.10
           - graalpy3.11
           - graalpy3.12
         exclude:
