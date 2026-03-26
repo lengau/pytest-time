@@ -85,7 +85,7 @@ jobs:
           # shellcheck disable=SC2086
           make test UV_PYTHON=${{ matrix.python }} UV_RESOLUTION=lowest
       - name: Upload code coverage
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           directory: ./results/
           files: coverage*.xml
