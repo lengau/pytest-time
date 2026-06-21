@@ -997,7 +997,7 @@ wheels = [
 
 [[package]]
 name = "docstrfmt"
-version = "2.1.1"
+version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.15'",
@@ -1024,9 +1024,9 @@ dependencies = [
     { name = "tomli", marker = "python_full_version == '3.10.*'" },
     { name = "types-docutils", version = "0.22.3.20260518", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/aa/f3/81fc723f0630a9b255fbfbd131a3b6513da89a6c96d7b9777ed9cdd30d67/docstrfmt-2.1.1.tar.gz", hash = "sha256:28da1242a933468c6aa11edb0b4752521388b990b945300af5b8fc1ccf939290", size = 41438, upload-time = "2026-06-12T02:22:10.407Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/bf/5b/d5a11792a63c1c136be94672f63fe141699366480686ab096a180a815656/docstrfmt-2.2.0.tar.gz", hash = "sha256:372b850cb557cd2ba99433f7e2497de56ae19386de497eed624334938647db72", size = 43398, upload-time = "2026-06-21T13:44:59.351Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9f/cf/c97fe63d1cdf68ab27fd6fd62ba3eadb2e980ca16957f2ff816e0bb57b43/docstrfmt-2.1.1-py3-none-any.whl", hash = "sha256:c36840faaa804929fd31e9eff1f89216a847dac4a1f0e667b35894efb20b710b", size = 41015, upload-time = "2026-06-12T02:22:09.051Z" },
+    { url = "https://files.pythonhosted.org/packages/7a/9e/07309bb9bf761388d833fba31df715b14c375919dbeafbe7f981fb8d8b6a/docstrfmt-2.2.0-py3-none-any.whl", hash = "sha256:757055934c48a287c151d155acb755031d8924105fbdca28cbd77499b838647d", size = 42936, upload-time = "2026-06-21T13:44:58.02Z" },
 ]
 
 [[package]]
@@ -2886,7 +2886,7 @@ lint = [
     { name = "codespell", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, extra = ["toml"], marker = "(python_full_version >= '3.9' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "docstrfmt", version = "1.10.0", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.9' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "docstrfmt", version = "1.11.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version == '3.9.*' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "docstrfmt", version = "2.1.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "docstrfmt", version = "2.2.0", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "mypy", version = "1.14.1", source = { registry = "https://pypi.org/simple" }, extra = ["reports"], marker = "(python_full_version < '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "mypy", version = "2.1.0", source = { registry = "https://pypi.org/simple" }, extra = ["reports"], marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pyright" },
