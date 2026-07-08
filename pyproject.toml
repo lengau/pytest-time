@@ -2,7 +2,8 @@
 name = "pytest_time"
 dynamic = ["version", "readme"]
 dependencies = [
-    "pytest",
+    "pytest>=9; python_version >= '3.10'",
+    "pytest>=8,<9; python_version < '3.10'",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -38,7 +39,8 @@ dev-dependencies = [
     "coverage>=7.3.1",
     "hypothesis>=6.78; (implementation_name != 'pypy' and implementation_name != 'graalpy') or (implementation_name == 'pypy' and python_version >= '3.11')",
     "hypothesis>=6.78,<6.156; (implementation_name == 'pypy' and python_version < '3.11') or implementation_name == 'graalpy'",
-    "pytest>=8.0.0",
+    "pytest>=9; python_version >= '3.10'",
+    "pytest>=8.0.0,<9; python_version < '3.10'",
     "pytest-check>=2.0",
     "pytest-cov>=4.1.0",
     "pytest-mock>=3.11.1",
@@ -84,8 +86,8 @@ type-hints = [
     "types-setuptools>=73.0.0.20240822",
 ]
 lint-38 = [
-    "pytest>=7,<9",  # Dropped Python 3.8 support
-    "pytest-check<2.8.1",  # Dropped Python 3.8 support
+    "pytest>=7,<9; python_version == '3.8'",  # Dropped Python 3.8 support
+    "pytest-check<2.8.1; python_version == '3.8'",  # Dropped Python 3.8 support
 ]
 docs = [
     "sphinx>=7.1.2",
