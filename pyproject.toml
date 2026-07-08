@@ -74,7 +74,6 @@ lint = [
     "codespell[toml]>=2.2.4,<3",
     "docstrfmt>=1.9.0",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
-    "ty",
 ]
 type-hints = [
     "types-pillow>=10.2.0.20240822",

@@ -35,7 +35,7 @@ lint: lint-ruff lint-types lint-docs
 
 .PHONY: lint-types
 lint-types:
-	uv run --group=lint --group=type-hints ty
+	ty
 
 .PHONY: lint-actions
 lint-actions: install-actionlint

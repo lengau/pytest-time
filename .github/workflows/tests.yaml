@@ -17,10 +17,11 @@ jobs:
       - name: Begin async installations
         id: install
         run: |
+          ty_change="$(sudo snap install --no-wait --classic ty)"
           shellcheck_change="$(sudo snap install --no-wait shellcheck)"
           uv_change="$(sudo snap install --no-wait --classic astral-uv)"
           ruff_change="$(sudo snap install --no-wait ruff)"
-          echo snap_changes="$shellcheck_change $uv_change $ruff_change" >> "$GITHUB_OUTPUT"
+          echo snap_changes="$ty_change $shellcheck_change $uv_change $ruff_change" >> "$GITHUB_OUTPUT"
       - name: Checkout
         uses: actions/checkout@v7
         with:
