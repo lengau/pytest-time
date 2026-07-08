@@ -3,6 +3,7 @@ name = "pytest_time"
 dynamic = ["version", "readme"]
 dependencies = [
     "pytest>=9; python_version >= '3.10'",
+    # renovate: ignore
     "pytest>=8,<9; python_version < '3.10'",
 ]
 classifiers = [
@@ -38,8 +39,10 @@ pytest_time = "pytest_time"
 dev-dependencies = [
     "coverage>=7.3.1",
     "hypothesis>=6.78; (implementation_name != 'pypy' and implementation_name != 'graalpy') or (implementation_name == 'pypy' and python_version >= '3.11')",
+    # renovate: ignore
     "hypothesis>=6.78,<6.156; (implementation_name == 'pypy' and python_version < '3.11') or implementation_name == 'graalpy'",
     "pytest>=9; python_version >= '3.10'",
+    # renovate: ignore
     "pytest>=8.0.0,<9; python_version < '3.10'",
     "pytest-check>=2.0",
     "pytest-cov>=4.1.0",
@@ -86,7 +89,9 @@ type-hints = [
     "types-setuptools>=73.0.0.20240822",
 ]
 lint-38 = [
+    # renovate: ignore
     "pytest>=7,<9; python_version == '3.8'",  # Dropped Python 3.8 support
+    # renovate: ignore
     "pytest-check<2.8.1; python_version == '3.8'",  # Dropped Python 3.8 support
 ]
 docs = [
