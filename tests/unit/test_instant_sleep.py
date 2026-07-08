@@ -29,6 +29,11 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
 
+        # Warm up JIT to avoid execution overhead flakiness
+        time.time()
+        real_time.time()
+        time.sleep(0)
+
         fake_before = time.time()
         real_before = real_time.time()
         time.sleep(sleep_time)
@@ -59,6 +64,11 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time: float):
     faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
+
+        # Warm up JIT to avoid execution overhead flakiness
+        time.monotonic()
+        real_time.monotonic()
+        time.sleep(0)
 
         fake_before = time.monotonic()
         real_before = real_time.monotonic()
