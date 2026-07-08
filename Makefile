@@ -35,6 +35,7 @@ lint: lint-ruff lint-types lint-docs
 
 .PHONY: lint-types
 lint-types:
+	uv sync
 	ty check
 
 .PHONY: lint-actions
