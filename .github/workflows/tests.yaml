@@ -17,7 +17,7 @@ jobs:
       - name: Begin async installations
         id: install
         run: |
-          ty_change="$(sudo snap install --no-wait --classic ty)"
+          ty_change="$(sudo snap install --no-wait --beta astral-ty)"
           shellcheck_change="$(sudo snap install --no-wait shellcheck)"
           uv_change="$(sudo snap install --no-wait --classic astral-uv)"
           ruff_change="$(sudo snap install --no-wait ruff)"
@@ -33,6 +33,7 @@ jobs:
               snap watch $change
             done
           echo "::endgroup::"
+          sudo snap alias astral-ty.ty ty
       - name: Run Linters
         run: |
           make lint

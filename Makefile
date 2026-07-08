@@ -69,7 +69,8 @@ endif
 .PHONY: install-lint-deps
 install-lint-deps: install-actionlint install-yamlfmt
 ifneq ($(shell which snap),)
-	sudo snap install --classic ty
+	sudo snap install --beta astral-ty
+	sudo snap alias astral-ty.ty ty
 	sudo snap install shellcheck
 	sudo snap install --classic astral-uv
 	sudo snap install ruff
