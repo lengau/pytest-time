@@ -49,6 +49,8 @@ jobs:
           - 3.13
           - 3.14
           - 3.14+freethreaded
+          - 3.15
+          - 3.15+freethreaded
           - pypy3.8
           - pypy3.9
           - pypy3.10
