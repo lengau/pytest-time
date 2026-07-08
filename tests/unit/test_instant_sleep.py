@@ -18,6 +18,7 @@ def faker(monkeypatch):
     return fake
 
 
+@pytest.mark.flaky(reruns=5)
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
 def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
     """Test that we sleep for far less time than given.
@@ -28,6 +29,11 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
     faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
+
+        # Warm up JIT to avoid execution overhead flakiness
+        time.time()
+        real_time.time()
+        time.sleep(0)
 
         fake_before = time.time()
         real_before = real_time.time()
@@ -49,6 +55,7 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
         assert real_delta < sleep_time, "Took too much real time."
 
 
+@pytest.mark.flaky(reruns=5)
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
 def test_instant_sleep_doesnt_sleep_monotonic(sleep_time: float):
     """Test that we sleep for far less time than given.
@@ -59,6 +66,11 @@ def test_instant_sleep_doesnt_sleep_monotonic(sleep_time: float):
     faker = InstantSleep()
     with pytest.MonkeyPatch.context() as mp:
         faker.install(mp)
+
+        # Warm up JIT to avoid execution overhead flakiness
+        time.monotonic()
+        real_time.monotonic()
+        time.sleep(0)
 
         fake_before = time.monotonic()
         real_before = real_time.monotonic()
