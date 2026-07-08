@@ -4,6 +4,9 @@ on:
     # branches to consider in the event; optional, defaults to all
     branches:
       - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
