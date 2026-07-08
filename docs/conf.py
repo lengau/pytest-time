@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'pytest-time'
-copyright = '2025, Alex Lowe'
+copyright = '2025-2026, Alex Lowe'
 author = 'Alex Lowe'
 
 # -- General configuration ---------------------------------------------------
