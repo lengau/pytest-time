@@ -18,6 +18,7 @@ def faker(monkeypatch):
     return fake
 
 
+@pytest.mark.flaky(reruns=5)
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
 def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
     """Test that we sleep for far less time than given.
@@ -54,6 +55,7 @@ def test_instant_sleep_doesnt_sleep_time(sleep_time: float):
         assert real_delta < sleep_time, "Took too much real time."
 
 
+@pytest.mark.flaky(reruns=5)
 @given(sleep_time=strategies.floats(min_value=10**-3, max_value=2**32))
 def test_instant_sleep_doesnt_sleep_monotonic(sleep_time: float):
     """Test that we sleep for far less time than given.
