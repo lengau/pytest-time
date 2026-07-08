@@ -13,6 +13,7 @@
     :caption: Contents:
 
     reference/index
+    release-notes/index
 
 ``pytest-time`` is a pytest extension for controlling Python's built-in
 :external+python:doc:`time <library/time>` module.
