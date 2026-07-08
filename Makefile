@@ -35,10 +35,8 @@ lint: lint-ruff lint-types lint-docs
 
 .PHONY: lint-types
 lint-types:
-	uv run --group=lint --group=type-hints pyright
-	uv run --group=lint --group=type-hints mypy
-	# Check type compatibility with pre-3.10 python
-	uv run --group=lint-38 --group=type-hints --python=3.8 --isolated mypy --python-version=3.8
+	uv sync
+	ty check
 
 .PHONY: lint-actions
 lint-actions: install-actionlint
@@ -67,6 +65,18 @@ ifneq ($(shell which apt-get),)
 else
 	$(warning Unknown how to install dependencies on this system. Please install the equivalents of the following debian packages:)
 	$(info libxml2-dev libxslt1-dev clang)
+endif
+
+.PHONY: install-lint-deps
+install-lint-deps: install-actionlint install-yamlfmt
+ifneq ($(shell which snap),)
+	sudo snap install --beta astral-ty
+	sudo snap alias astral-ty.ty ty
+	sudo snap install shellcheck
+	sudo snap install --classic astral-uv
+	sudo snap install ruff
+else
+	$(warning Please install ty, shellcheck, astral-uv, and ruff manually, as snap is not available.)
 endif
 
 .PHONY: install-actionlint

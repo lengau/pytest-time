@@ -1,6 +1,7 @@
 """Pytest plugin for manipulating the time."""
 
 import time
+from typing import Any, cast
 
 import pytest
 
@@ -29,7 +30,7 @@ except ImportError:  # pragma: no cover
 
 @pytest.fixture
 def mock_time(monkeypatch: pytest.MonkeyPatch) -> MockWrapper:
-    wrapper = MockWrapper(time)  # type: ignore[arg-type]
+    wrapper = MockWrapper(cast("Any", time))
     wrapper.install(monkeypatch)
     return wrapper
 
