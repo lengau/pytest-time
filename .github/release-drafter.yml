@@ -1,13 +1,16 @@
 categories:
   - title: "New Features"
-    labels:
-      - "enhancement"
+    when:
+      labels:
+        - "enhancement"
   - title: "Maintenance"
-    labels:
-      - "maintenance"
+    when:
+      labels:
+        - "maintenance"
   - title: "Bug Fixes"
-    labels:
-      - "bug"
+    when:
+      labels:
+        - "bug"
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   Special thanks to the contributors that made this release happen: $CONTRIBUTORS
