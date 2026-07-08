@@ -1,13 +1,18 @@
-pytest-time 0.5.0
-=================
+###################
+ pytest-time 0.5.0
+###################
 
 *2026-07-08*
 
-What's new
-----------
-* Added official support for Python 3.15.
-* Added GraalPy support on Linux and macOS.
+************
+ What's new
+************
 
-Bug fixes
----------
-* Fixed ``hypothesis`` version resolution for PyPy in the development dependencies.
+- Added official support for Python 3.15.
+- Added GraalPy support on Linux and macOS.
+
+***********
+ Bug fixes
+***********
+
+- Fixed ``hypothesis`` version resolution for PyPy in the development dependencies.
