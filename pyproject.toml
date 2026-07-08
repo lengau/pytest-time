@@ -73,10 +73,8 @@ build-backend = "setuptools.build_meta"
 lint = [
     "codespell[toml]>=2.2.4,<3",
     "docstrfmt>=1.9.0",
-    "mypy[reports]>=1.18.0; python_version >= '3.10'",
-    "mypy[reports]~=1.14.0; python_version < '3.10'",
-    "pyright==1.1.411",
     "rstcheck[sphinx,toml]>=6.0.0,<7",
+    "ty",
 ]
 type-hints = [
     "types-pillow>=10.2.0.20240822",
@@ -87,7 +85,6 @@ type-hints = [
     "types-setuptools>=73.0.0.20240822",
 ]
 lint-38 = [
-    "mypy[reports]>=1.14,<1.17",  # Dropped support for targeting 3.8
     "pytest>=7,<9",  # Dropped Python 3.8 support
     "pytest-check<2.8.1",  # Dropped Python 3.8 support
 ]
