@@ -26,12 +26,12 @@
     },
     {
       "matchPackageNames": ["hypothesis"],
-      "matchCurrentValue": ">=6.78,<6.156",
+      "matchCurrentValue": "/^>=6\\.78,<6\\.156$/",
       "enabled": false
     },
     {
       "matchPackageNames": ["pytest-check"],
-      "matchCurrentValue": "<2.8.1",
+      "matchCurrentValue": "/^<2\\.8\\.1$/",
       "enabled": false
     }
   ],
