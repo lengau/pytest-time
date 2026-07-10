@@ -18,6 +18,21 @@
     {
       "matchUpdateTypes": ["patch"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["pytest"],
+      "matchCurrentValue": "/^(>=8,<9|>=8\\.0\\.0,<9|>=7,<9)$/",
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["hypothesis"],
+      "matchCurrentValue": "/^>=6\\.78,<6\\.156$/",
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["pytest-check"],
+      "matchCurrentValue": "/^<2\\.8\\.1$/",
+      "enabled": false
     }
   ],
   "lockFileMaintenance": {
