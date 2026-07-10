@@ -16,7 +16,6 @@
       "schedule": ["at any time"]
     },
     {
-      "matchManagers": ["pre-commit"],
       "matchUpdateTypes": ["patch"],
       "automerge": true
     }
