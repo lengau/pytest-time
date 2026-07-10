@@ -22,7 +22,7 @@
     }
   ],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
   "pre-commit": {
     "enabled": true
