@@ -14,6 +14,11 @@
       "matchManagers": ["pep621"],
       "automerge": true,
       "schedule": ["at any time"]
+    },
+    {
+      "matchManagers": ["pre-commit"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
     }
   ],
   "lockFileMaintenance": {
