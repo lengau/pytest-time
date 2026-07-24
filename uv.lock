@@ -2790,7 +2790,7 @@ type-hints = [
     { name = "types-docutils", version = "0.21.0.20241128", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-docutils", version = "0.22.3.20260518", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "types-docutils", version = "0.22.3.20260712", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20260724", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pillow" },
     { name = "types-pygments", version = "2.19.0.20250107", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pygments", version = "2.19.0.20251121", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
@@ -2800,7 +2800,7 @@ type-hints = [
     { name = "types-pytz", version = "2026.2.0.20260518", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-setuptools", version = "75.8.0.20250110", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-setuptools", version = "81.0.0.20260209", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "types-setuptools", version = "83.0.0.20260716", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-setuptools", version = "83.0.0.20260724", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
 
 [package.metadata]
@@ -4264,7 +4264,7 @@ wheels = [
 
 [[package]]
 name = "types-docutils"
-version = "0.22.3.20260712"
+version = "0.22.3.20260724"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy'",
@@ -4274,9 +4274,9 @@ resolution-markers = [
     "python_full_version == '3.11.*' and implementation_name != 'graalpy'",
     "python_full_version == '3.10.*' and implementation_name != 'graalpy' and implementation_name != 'pypy'",
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9e/24/f50d49be6d5ebbae29ff83418b6788fc9897fdfb54d56555c9ae4b15fb53/types_docutils-0.22.3.20260712.tar.gz", hash = "sha256:bed54a50136c8e7613c03ee1c51eb958b42754915df83535de356b974ca05877", size = 57848, upload-time = "2026-07-12T05:13:36.059Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/8f/30e02b59a9aad81eacd3d02fab5365257e89fde56e7acf44a4128f5f80aa/types_docutils-0.22.3.20260724.tar.gz", hash = "sha256:0223ce87f9b8331a5a3a7c7832e828033d289da6b878a0dcfbc74c30ec58850e", size = 57883, upload-time = "2026-07-24T04:58:36.388Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/af/50/2b408d249cc7260b2296af68c395d90267c23288d1eb96765637eb6c1490/types_docutils-0.22.3.20260712-py3-none-any.whl", hash = "sha256:4bbc5cf949f8b1b1c7e1befa5a4d1c3bcad9f22f823538eea26ba7ff694fa38e", size = 91970, upload-time = "2026-07-12T05:13:35.141Z" },
+    { url = "https://files.pythonhosted.org/packages/13/1a/898fbb98680dbd5eb7ac8e9cbaf39cf234d329a45d89d04faaf33d7d8008/types_docutils-0.22.3.20260724-py3-none-any.whl", hash = "sha256:45e2fe584608671aa648784c4f805d08a36cd69eb2bd542e60522140c46dc89c", size = 91986, upload-time = "2026-07-24T04:58:35.368Z" },
 ]
 
 [[package]]
@@ -4351,7 +4351,7 @@ resolution-markers = [
 ]
 dependencies = [
     { name = "types-docutils", version = "0.22.3.20260518", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "types-docutils", version = "0.22.3.20260712", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.22.3.20260724", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/db/66/3e27e8dbe72947d51355d1fcba222a55bf5f0770ee660e9cc9df0d1ce5d7/types_pygments-2.20.0.20260518.tar.gz", hash = "sha256:bcab233d0389cb0a91146eb860e7bdcbceaa0f30bee73cefc7b367129cc4a330", size = 21152, upload-time = "2026-05-18T06:07:26.927Z" }
 wheels = [
@@ -4445,7 +4445,7 @@ wheels = [
 
 [[package]]
 name = "types-setuptools"
-version = "83.0.0.20260716"
+version = "83.0.0.20260724"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
@@ -4471,9 +4471,9 @@ resolution-markers = [
     "python_full_version == '3.11.*' and implementation_name != 'graalpy' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
     "python_full_version == '3.10.*' and implementation_name != 'graalpy' and implementation_name != 'pypy' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fe/fa/deb7066a472bb23d28205a9dde66caef317db4b0f2ce612068c5d45a9f87/types_setuptools-83.0.0.20260716.tar.gz", hash = "sha256:a36ad71a57919b80db314e6104478ee75376a34abea88ba0f3d28db4d10006d7", size = 45672, upload-time = "2026-07-16T04:47:56.484Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9d/8c/e069673eb23a7a8242f6e28184ef6911849b2667a61b3bf298d86b807f33/types_setuptools-83.0.0.20260724.tar.gz", hash = "sha256:fe2801176b667f1e8209f8571b0839ca6c34318d743825aeacf3f29970c8d46f", size = 45746, upload-time = "2026-07-24T04:57:55.054Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e3/f9/b89c50c1f482b2b4e038a845c23a3b3fdfd735199634d2452b8951a8629b/types_setuptools-83.0.0.20260716-py3-none-any.whl", hash = "sha256:77315e9a921ced0c7cbef803d7cf06db8e60e9df5661955ee4ce3d1a1675e0dc", size = 68767, upload-time = "2026-07-16T04:47:55.484Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/5d/5c32313e6eb7298944ca0fad6486157e8ed549760a25598cddb8ac7e08c6/types_setuptools-83.0.0.20260724-py3-none-any.whl", hash = "sha256:eed1a91e1ed9d8ec9f3e71908e5bb17272e41e0852d37d1485ecd9cd33165e1a", size = 68758, upload-time = "2026-07-24T04:57:53.976Z" },
 ]
 
 [[package]]
