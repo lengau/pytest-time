@@ -9,10 +9,10 @@ from pytest_time.instant_sleep import instant_sleep, InstantSleep
 
 __all__ = [
     "InstantSleep",
-    "instant_sleep",
     "MockWrapper",
-    "mock_instant_sleep",
     "__version__",
+    "instant_sleep",
+    "mock_instant_sleep",
 ]
 
 from pytest_time.wrap_time import MockWrapper
