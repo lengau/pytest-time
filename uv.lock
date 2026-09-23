@@ -2952,7 +2952,7 @@ type-hints = [
     { name = "types-docutils", version = "0.21.0.20241128", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-docutils", version = "0.22.3.20251115", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-docutils", version = "0.22.3.20260724", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra == 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "types-docutils", version = "0.23.0.20260917", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "types-docutils", version = "0.23.0.20260923", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and extra != 'group-11-pytest-time-lint') or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pillow" },
     { name = "types-pygments", version = "2.19.0.20250107", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "types-pygments", version = "2.19.0.20251121", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
@@ -3768,7 +3768,7 @@ dependencies = [
     { name = "sphinx", version = "7.4.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "starlette", version = "0.49.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "starlette", version = "1.6.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "starlette", version = "1.7.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "uvicorn", version = "0.39.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "uvicorn", version = "0.53.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "watchfiles", version = "1.1.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
@@ -3807,7 +3807,7 @@ dependencies = [
     { name = "colorama", marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "starlette", version = "1.6.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "starlette", version = "1.7.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "uvicorn", version = "0.53.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "watchfiles", version = "1.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "websockets", version = "17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
@@ -4121,7 +4121,7 @@ wheels = [
 
 [[package]]
 name = "starlette"
-version = "1.6.0"
+version = "1.7.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
@@ -4151,9 +4151,9 @@ dependencies = [
     { name = "anyio", version = "4.15.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "typing-extensions", version = "4.16.0", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.10' and python_full_version < '3.13') or (python_full_version < '3.10' and extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38') or (python_full_version >= '3.13' and extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz", hash = "sha256:d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b", size = 2716969, upload-time = "2026-08-08T18:27:57.512Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz", hash = "sha256:c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d", size = 2736246, upload-time = "2026-09-23T07:30:26.35Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c8/cb/6a6a47d5b464bd08695d254f3da6e7986cc70c9fa5d778eda57538edfe56/starlette-1.6.0-py3-none-any.whl", hash = "sha256:a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c", size = 75969, upload-time = "2026-08-08T18:27:56.196Z" },
+    { url = "https://files.pythonhosted.org/packages/4e/d6/1ec1b290f9e0fb067899b61e1d37a30c923068bad260b216dbe37a7d2967/starlette-1.7.0-py3-none-any.whl", hash = "sha256:67f8e99895493dd2911a03f11314af6ceebeae4e704bb9f43dfc6a9db151c93e", size = 78980, upload-time = "2026-09-23T07:30:24.567Z" },
 ]
 
 [[package]]
@@ -4446,7 +4446,7 @@ wheels = [
 
 [[package]]
 name = "types-docutils"
-version = "0.23.0.20260917"
+version = "0.23.0.20260923"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy'",
@@ -4456,9 +4456,9 @@ resolution-markers = [
     "python_full_version == '3.11.*' and implementation_name != 'graalpy'",
     "python_full_version == '3.10.*' and implementation_name != 'graalpy' and implementation_name != 'pypy'",
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/27/1b/1f8194b3d7c8514628af014609ebc910610449f83414e6506a0f73233828/types_docutils-0.23.0.20260917.tar.gz", hash = "sha256:6f77b72baeed83d34d01303a3a6c87f0e215d37dd9847c91e876bf018a2efdf5", size = 58328, upload-time = "2026-09-17T06:51:22.297Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/ff/e5c4e5383a226703fc81e3e53bb2072526ec4b7e834eeb7146ea674192ed/types_docutils-0.23.0.20260923.tar.gz", hash = "sha256:486d9054ea84410cc201a30c15759077a5f32234247cfc08aa7290ff2509f770", size = 58327, upload-time = "2026-09-23T06:51:56.366Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/52/2bb83de751fcf24ff87ee51c1772cffbef08687c367c9fb39fe17338b205/types_docutils-0.23.0.20260917-py3-none-any.whl", hash = "sha256:642b1d52413dec971f0b577ad3b7707376312632a8cf93aa5bbc179130f5c9eb", size = 92120, upload-time = "2026-09-17T06:51:21.15Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/43/b39c0af29de3b02bcf6194a3d6675685d2d7b8b336a31af4525bc0022c4b/types_docutils-0.23.0.20260923-py3-none-any.whl", hash = "sha256:62851b429db623e36853a4a189ce15a846e0636fe090c135d6dc5dd4f9108ef5", size = 92174, upload-time = "2026-09-23T06:51:54.908Z" },
 ]
 
 [[package]]
