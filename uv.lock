@@ -273,7 +273,7 @@ dependencies = [
     { name = "soupsieve", version = "2.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "soupsieve", version = "2.8.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "soupsieve", version = "2.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "soupsieve", version = "3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "soupsieve", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "typing-extensions", version = "4.13.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "typing-extensions", version = "4.16.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
@@ -3785,7 +3785,7 @@ wheels = [
 
 [[package]]
 name = "soupsieve"
-version = "3.0"
+version = "3.0.1"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
@@ -3805,9 +3805,9 @@ resolution-markers = [
     "python_full_version >= '3.12' and implementation_name != 'graalpy' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
     "python_full_version == '3.11.*' and implementation_name != 'graalpy' and extra != 'group-11-pytest-time-lint' and extra != 'group-11-pytest-time-lint-38'",
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6a/a9/4af6e80fab273e06a9682fe8c9984c4b031dc07c7d425568835286bcdfad/soupsieve-3.0.tar.gz", hash = "sha256:1136e639f72f95f1a9351b4587f640553d08d41a5653b187da30d6c9200c296c", size = 115160, upload-time = "2026-10-10T13:04:39.305Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0e/b9/014459776d0be4dd5f0c196fd2c8dc523a4b817a561667fae4f330b04b48/soupsieve-3.0.1.tar.gz", hash = "sha256:713d5c69f90ef84deffec0b9c6244796575e3c9fc9081cefb96091ce1200a308", size = 115438, upload-time = "2026-10-10T17:10:25.848Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2d/7e/5db89afeaa5cea03b6db658faa9e04482f2ee5a30a8eb2f2277662364171/soupsieve-3.0-py3-none-any.whl", hash = "sha256:6abca899ac412ad87154fd65928da2fc0cff3df490767b7c9dd7726bf661e954", size = 41605, upload-time = "2026-10-10T13:04:37.759Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/cd/8092ac4e9009b4a480ba212f5cdfd26dabfc97990b176bbc70c7662d6f05/soupsieve-3.0.1-py3-none-any.whl", hash = "sha256:dd1d6bd1ba7cd39866edd704321c11b4df5e7ae98620174a9071a9af3a9c05cd", size = 41679, upload-time = "2026-10-10T17:10:24.546Z" },
 ]
 
 [[package]]
