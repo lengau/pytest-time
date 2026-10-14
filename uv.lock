@@ -3013,7 +3013,7 @@ wheels = [
 
 [[package]]
 name = "pytest-check"
-version = "3.0.1"
+version = "3.0.2"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.12' and implementation_name == 'graalpy' and extra != 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38'",
@@ -3050,9 +3050,9 @@ dependencies = [
     { name = "pytest", version = "9.1.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "typing-extensions", version = "4.16.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/76/7a/4bac236071623fb3a94fc3458615a1b92fca838dfb12d0068f5ca243d9e0/pytest_check-3.0.1.tar.gz", hash = "sha256:73506fde43d9140fac4f7d5e56fc2194632c81911234a64752025e1349a0653a", size = 48520, upload-time = "2026-10-12T20:56:51.268Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/1f/036a792f7a894ff3327bceafe4923faa74a939dc6fc6d9f37a392ac4db72/pytest_check-3.0.2.tar.gz", hash = "sha256:832ae62a04d601ca3cc9abfa2e7265cf9fb9a6723d2a5f4852a9ea8dc27c29fe", size = 48833, upload-time = "2026-10-14T04:39:45.412Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8a/2c/8219c6e21da1c6bcc45a04f6406812c32b4c34ce6d703bcd79481df67f21/pytest_check-3.0.1-py3-none-any.whl", hash = "sha256:286f421a666dcd2f6ae590bb9d5aa58d5498d5a729d4330c19b16d66d1ff61d9", size = 23530, upload-time = "2026-10-12T20:56:50.008Z" },
+    { url = "https://files.pythonhosted.org/packages/df/f9/ebee86e98db559ca97956d548ebf77ca3d1378d7fc044dcd9d9fde08a484/pytest_check-3.0.2-py3-none-any.whl", hash = "sha256:5765070abc92a36830760989d052dc12aca1cc4609fb479fe6286f54a1de537f", size = 23599, upload-time = "2026-10-14T04:39:44.483Z" },
 ]
 
 [[package]]
@@ -3297,7 +3297,7 @@ dev = [
     { name = "pytest", version = "9.1.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pytest-check", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pytest-check", version = "2.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
-    { name = "pytest-check", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
+    { name = "pytest-check", version = "3.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pytest-cov", version = "5.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pytest-cov", version = "7.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
     { name = "pytest-mock", version = "3.14.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or (extra == 'group-11-pytest-time-lint' and extra == 'group-11-pytest-time-lint-38')" },
